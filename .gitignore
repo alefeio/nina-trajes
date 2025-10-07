@@ -43,3 +43,5 @@ src/data/
 *.tgz
 
 /src/generated/prisma
+
+/src/generated/prisma
