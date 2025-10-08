@@ -19,15 +19,15 @@ export default function Hero() {
         <div className="relative z-10 max-w-xs md:max-w-7xl mx-auto px-4 text-primary-950">
           <div className="text-center">
             <h1 className="font-serif text-primary-600 text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
-              Viaje com a D' Hages
+              Curta o Círio Fluvial com a Muiraquitã.
             </h1>
 
             <p className="text-xl md:text-2xl mt-4 px-2 md:px-0">
-              A D'Hages Turismo é especializada em excursões e pacotes de viagem por todo o Brasil.
+              A Romaria Fluvial Muiraquitã é uma organização especializada no segmento religioso católico e com experiência há mais de 20 anos.
             </p>
 
             <p className="text-lg md:text-xl mt-2 px-2 md:px-0 font-light">
-              Descubra roteiros inesquecíveis em Carolina-MA, Lençóis Maranhenses, Fortaleza, Jericoacoara, e nas demais paradisíacas praias do Nordeste e litoral brasileiro, tudo com a segurança e o conforto que sua família merece.
+              Nos destacamos pela qualidade e eficácia no atendimento, a fim de garantir os melhores serviços para você, sua familia e seu grupo. Dentre os públicos que atendemos estão: agências de viagens, paróquias, dioceses e organizações religiosas.
             </p>
 
             {/* Botões de Ação */}
