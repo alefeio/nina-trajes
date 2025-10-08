@@ -55,12 +55,12 @@ export const getServerSideProps: GetServerSideProps<PoliticaDeCookiesProps> = as
 // O componente agora recebe os dados do menu como uma prop
 const PoliticaDeCookies = ({ menuData }: PoliticaDeCookiesProps) => {
   // Dados específicos para SEO desta página
-  const pageTitle = "Política de Cookies | D' Hages Turismo";
-  const pageDescription = "Conheça a política de cookies da D' Hages Turismo. Entenda como utilizamos cookies para melhorar sua experiência de navegação e proteger seus dados.";
-  const pageKeywords = "política de cookies, cookies, privacidade, D' Hages Turismo, dados, navegação, site, LGPD";
+  const pageTitle = "Política de Cookies | Romaria Fluvial Muiraquitã";
+  const pageDescription = "Conheça a política de cookies da Romaria Fluvial Muiraquitã. Entenda como utilizamos cookies para melhorar sua experiência de navegação e proteger seus dados.";
+  const pageKeywords = "política de cookies, cookies, privacidade, Romaria Fluvial Muiraquitã, dados, navegação, site, LGPD";
   const pageUrl = "https://seusite.com/politica-de-cookies"; // **MUITO IMPORTANTE: Substitua pela URL REAL desta página**
   const ogImage = "https://seusite.com/images/og-image-politica-cookies.jpg"; // **Crie uma imagem específica ou use uma padrão**
-  const ogImageAlt = "Ilustração da Política de Cookies da D' Hages Turismo";
+  const ogImageAlt = "Ilustração da Política de Cookies da Romaria Fluvial Muiraquitã";
 
 
   return (
@@ -83,7 +83,7 @@ const PoliticaDeCookies = ({ menuData }: PoliticaDeCookiesProps) => {
 
         {/* Open Graph Tags */}
         <meta property="og:locale" content="pt_BR" />
-        <meta property="og:site_name" content="D' Hages Turismo" />
+        <meta property="og:site_name" content="Romaria Fluvial Muiraquitã" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:url" content={pageUrl} />
@@ -111,7 +111,7 @@ const PoliticaDeCookies = ({ menuData }: PoliticaDeCookiesProps) => {
               "url": "${pageUrl}",
               "publisher": {
                 "@type": "Organization",
-                "name": "D' Hages Turismo",
+                "name": "Romaria Fluvial Muiraquitã",
                 "logo": {
                   "@type": "ImageObject",
                   "url": "https://seusite.com/images/logo-dhages.png" // Substitua pela URL do seu logo
@@ -128,7 +128,7 @@ const PoliticaDeCookies = ({ menuData }: PoliticaDeCookiesProps) => {
         </h1>
 
         <p className="mb-8 text-center text-neutral-600">
-          Esta página descreve como a D' Hages Turismo utiliza cookies em nosso site.
+          Esta página descreve como a Romaria Fluvial Muiraquitã utiliza cookies em nosso site.
         </p>
 
         <section className="mb-8">
@@ -139,7 +139,7 @@ const PoliticaDeCookies = ({ menuData }: PoliticaDeCookiesProps) => {
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-primary-700">2. Como a D' Hages Turismo Usa os Cookies</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-primary-700">2. Como a Romaria Fluvial Muiraquitã Usa os Cookies</h2>
           <p className="mb-4 text-neutral-700">
             Utilizamos cookies para diversas finalidades em nosso site, visando melhorar sua experiência de navegação e entender como nossos serviços são utilizados:
           </p>
@@ -185,7 +185,7 @@ const PoliticaDeCookies = ({ menuData }: PoliticaDeCookiesProps) => {
           </p>
           <p className="mt-4">
             <Link href="/" className="text-secondary-500 hover:underline font-semibold">
-              Voltar para a página inicial da D' Hages Turismo
+              Voltar para a página inicial da Romaria Fluvial Muiraquitã
             </Link>
           </p>
         </section>

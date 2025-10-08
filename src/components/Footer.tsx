@@ -131,7 +131,7 @@ const Footer = ({ menuData }: MenuProps) => {
                     {/* Direitos Autorais e Créditos */}
                     <div className="text-center md:text-left border-t border-gray-700 mt-8 pt-6">
                         <p className="text-sm text-white">
-                            © 2025 D' Hages Turismo. Todos os direitos reservados.
+                            © 2025 Romaria Fluvial Muiraquitã. Todos os direitos reservados.
                         </p>
                     </div>
                 </div>

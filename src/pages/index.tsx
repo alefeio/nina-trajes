@@ -125,28 +125,28 @@ export default function Home({ banners, menu, testimonials, faqs, destinos, gall
         ? banners[0].banners[0].url
         : 'https://seusite.com/default-og-image.jpg';
 
-    const defaultOgImageAlt = "D' Hages Turismo - Sua agência de viagens em Belém";
+    const defaultOgImageAlt = "Romaria Fluvial Muiraquitã - Sua agência de viagens em Belém";
 
     return (
         <>
             <Head>
-                <title>D' Hages Turismo | Agência de Viagens em Belém - Pacotes e Destinos</title>
+                <title>Romaria Fluvial Muiraquitã | Agência de Viagens em Belém - Pacotes e Destinos</title>
                 <meta
                     name="description"
-                    content="Descubra os melhores pacotes de viagens e destinos com a D' Hages Turismo em Belém. Aventuras memoráveis, atendimento personalizado e as melhores ofertas para sua próxima viagem. Viaje com a D' Hages Turismo para Salinas, Lençóis Maranhenses, Carolina-MA, São Luís, Fortaleza, Jericoacoara, Marajó, Ajuruteua, Algodoal, Nordeste e muito mais!"
+                    content="Descubra os melhores pacotes de viagens e destinos com a Romaria Fluvial Muiraquitã em Belém. Aventuras memoráveis, atendimento personalizado e as melhores ofertas para sua próxima viagem. Viaje com a Romaria Fluvial Muiraquitã para Salinas, Lençóis Maranhenses, Carolina-MA, São Luís, Fortaleza, Jericoacoara, Marajó, Ajuruteua, Algodoal, Nordeste e muito mais!"
                 />
                 <meta
                     name="keywords"
-                    content="D' Hages Turismo, viagens, pacotes de viagens, Belém, Pará, destinos turísticos, agência de viagens, excursões, aventura, turismo, agência turismo Belém, agencia turismo belem, agencia de viagens belem, agencia de viagens em belem, agencia de turismo em belem, pacotes de viagens belem, pacotes de viagens em belem, destinos turísticos belem, destinos turísticos em belem"
+                    content="Romaria Fluvial Muiraquitã, viagens, pacotes de viagens, Belém, Pará, destinos turísticos, agência de viagens, excursões, aventura, turismo, agência turismo Belém, agencia turismo belem, agencia de viagens belem, agencia de viagens em belem, agencia de turismo em belem, pacotes de viagens belem, pacotes de viagens em belem, destinos turísticos belem, destinos turísticos em belem"
                 />
                 <link rel="canonical" href="https://seusite.com/" />
                 <meta name="robots" content="index, follow" />
                 <meta property="og:locale" content="pt_BR" />
-                <meta property="og:site_name" content="D' Hages Turismo" />
-                <meta property="og:title" content="D' Hages Turismo | Agência de Viagens em Belém - Pacotes e Destinos" />
+                <meta property="og:site_name" content="Romaria Fluvial Muiraquitã" />
+                <meta property="og:title" content="Romaria Fluvial Muiraquitã | Agência de Viagens em Belém - Pacotes e Destinos" />
                 <meta
                     property="og:description"
-                    content="Descubra os melhores pacotes de viagens e destinos com a D' Hages Turismo em Belém. Aventuras memoráveis, atendimento personalizado e as melhores ofertas para sua próxima viagem."
+                    content="Descubra os melhores pacotes de viagens e destinos com a Romaria Fluvial Muiraquitã em Belém. Aventuras memoráveis, atendimento personalizado e as melhores ofertas para sua próxima viagem."
                 />
                 <meta property="og:url" content="https://seusite.com/" />
                 <meta property="og:type" content="website" />
@@ -155,10 +155,10 @@ export default function Home({ banners, menu, testimonials, faqs, destinos, gall
                 <meta property="og:image:height" content="630" />
                 <meta property="og:image:alt" content={defaultOgImageAlt} />
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="D' Hages Turismo | Agência de Viagens em Belém - Pacotes e Destinos" />
+                <meta name="twitter:title" content="Romaria Fluvial Muiraquitã | Agência de Viagens em Belém - Pacotes e Destinos" />
                 <meta
                     property="twitter:description"
-                    content="Descubra os melhores pacotes de viagens e destinos com a D' Hages Turismo em Belém. Aventuras memoráveis, atendimento personalizado e as melhores ofertas para sua próxima viagem."
+                    content="Descubra os melhores pacotes de viagens e destinos com a Romaria Fluvial Muiraquitã em Belém. Aventuras memoráveis, atendimento personalizado e as melhores ofertas para sua próxima viagem."
                 />
                 <meta name="twitter:image" content={defaultOgImage} />
                 <meta name="twitter:image:alt" content={defaultOgImageAlt} />
@@ -167,7 +167,7 @@ export default function Home({ banners, menu, testimonials, faqs, destinos, gall
                     {
                       "@context": "https://schema.org",
                       "@type": "TravelAgency",
-                      "name": "D' Hages Turismo",
+                      "name": "Romaria Fluvial Muiraquitã",
                       "url": "https://seusite.com/",
                       "logo": "https://seusite.com/images/logo-dhages.png",
                       "description": "Sua agência de viagens em Belém, Pará. Especializada em pacotes turísticos e destinos memoráveis.",

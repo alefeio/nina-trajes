@@ -95,7 +95,7 @@ export default function Hero() {
                 Cada detalhe foi pensado para a sua segurança e bem-estar, para que você e sua família possam relaxar e aproveitar o trajeto.
               </p>
               <p className="text-lg text-white font-bold">
-                Viaje com a D' Hages Turismo e descubra o que é viajar com conforto, segurança e excelência.
+                Viaje com a Romaria Fluvial Muiraquitã e descubra o que é viajar com conforto, segurança e excelência.
               </p>
             </div>
 

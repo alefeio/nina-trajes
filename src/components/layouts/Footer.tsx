@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
           {/* Informações de contato */}
           <div className="mb-4 md:mb-0">
-            <h3 className="text-lg font-semibold mb-2">D' Hages Turismo</h3>
+            <h3 className="text-lg font-semibold mb-2">Romaria Fluvial Muiraquitã</h3>
             <p className="text-sm text-gray-400">
               Av. Senador Lemos, 3153, lojas 30/31 - 1º piso, It Center - Sacramenta - Belém/PA
             </p>
@@ -29,7 +29,7 @@ const Footer = () => {
 
         {/* Direitos autorais */}
         <div className="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-500">
-          © {currentYear} D' Hages Turismo. Todos os direitos reservados.
+          © {currentYear} Romaria Fluvial Muiraquitã. Todos os direitos reservados.
         </div>
       </div>
     </footer>

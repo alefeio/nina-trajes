@@ -52,14 +52,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         // Envia o email de boas-vindas
         await resend.emails.send({
-            from: "D' Hages Turismo <contato@dhagesturismo.com.br>", // Altere para o seu email verificado da D' Hages
+            from: "Romaria Fluvial Muiraquitã <contato@dhagesturismo.com.br>", // Altere para o seu email verificado da D' Hages
             to: email,
-            subject: `Fique por dentro das nossas promoções, ${name}! | D' Hages Turismo`,
+            subject: `Fique por dentro das nossas promoções, ${name}! | Romaria Fluvial Muiraquitã`,
             html: `
                 <!DOCTYPE html>
                 <html>
                 <head>
-                    <title>Bem-vindo(a) à D' Hages Turismo, ${name}!</title>
+                    <title>Bem-vindo(a) à Romaria Fluvial Muiraquitã, ${name}!</title>
                     <style>
                         body { font-family: sans-serif; line-height: 1.6; color: #333; }
                         .container { max-width: 600px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
@@ -73,18 +73,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 <body>
                     <div class="container">
                         <div class="header">
-                            <img src="https://seusite.com/images/logo-dhages.png" alt="Logo D' Hages Turismo" /> </div>
+                            <img src="https://seusite.com/images/logo-dhages.png" alt="Logo Romaria Fluvial Muiraquitã" /> </div>
                         <div class="content">
                             <p>Olá, ${name}!</p>
-                            <p>Seja bem-vindo(a) à família D' Hages Turismo! Estamos muito felizes em ter você conosco.</p>
+                            <p>Seja bem-vindo(a) à família Romaria Fluvial Muiraquitã! Estamos muito felizes em ter você conosco.</p>
                             <p>A partir de agora, você fará parte da nossa lista exclusiva e receberá em primeira mão as melhores ofertas de pacotes de viagens, destinos imperdíveis, promoções especiais e todas as novidades que preparamos para você.</p>
                             <p>Prepare-se para embarcar em novas aventuras e criar memórias inesquecíveis. Estamos ansiosos para te levar aos seus sonhos!</p>
                             <p>Atenciosamente,</p>
-                            <p>A equipe D' Hages Turismo.</p>
+                            <p>A equipe Romaria Fluvial Muiraquitã.</p>
                             <p><a href="https://seusite.com/pacotes" class="cta-button">Ver Nossos Pacotes de Viagem</a></p> </div>
                         <div class="footer">
-                            <p>D' Hages Turismo - Sua agência de viagens em Belém, Pará.</p>
-                            <p>&copy; ${new Date().getFullYear()} D' Hages Turismo. Todos os direitos reservados.</p>
+                            <p>Romaria Fluvial Muiraquitã - Sua agência de viagens em Belém, Pará.</p>
+                            <p>&copy; ${new Date().getFullYear()} Romaria Fluvial Muiraquitã. Todos os direitos reservados.</p>
                         </div>
                     </div>
                 </body>

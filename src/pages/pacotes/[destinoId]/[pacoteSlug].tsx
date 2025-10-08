@@ -230,9 +230,9 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
 
     const metaDescription = pacote.subtitle
         ? pacote.subtitle
-        : `Descubra o pacote de viagem ${pacote.title} com a D' Hages Turismo. Confira datas, preços e detalhes para sua próxima aventura.`;
+        : `Descubra o pacote de viagem ${pacote.title} com a Romaria Fluvial Muiraquitã. Confira datas, preços e detalhes para sua próxima aventura.`;
 
-    const keywords = `${pacote.title}, ${pacote.subtitle || ''}, D' Hages Turismo, viagens, pacotes turísticos, ${pacote.destinoId.split('-')[0]}, ${pacote.slug}, ${availableDates?.[0]?.saida ? format(availableDates[0].saida, 'yyyy', { locale: ptBR }) : ''}`
+    const keywords = `${pacote.title}, ${pacote.subtitle || ''}, Romaria Fluvial Muiraquitã, viagens, pacotes turísticos, ${pacote.destinoId.split('-')[0]}, ${pacote.slug}, ${availableDates?.[0]?.saida ? format(availableDates[0].saida, 'yyyy', { locale: ptBR }) : ''}`
         .split(',')
         .map(keyword => keyword.trim())
         .filter(keyword => keyword.length > 0)
@@ -241,13 +241,13 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
     return (
         <>
             <Head>
-                <title>{pacote.title} | D' Hages Turismo</title>
+                <title>{pacote.title} | Romaria Fluvial Muiraquitã</title>
                 <meta name="description" content={metaDescription} />
                 <meta name="keywords" content={keywords} />
                 <link rel="canonical" href={shareUrl} />
                 <meta name="robots" content="index, follow" />
                 <meta property="og:locale" content="pt_BR" />
-                <meta property="og:site_name" content="D' Hages Turismo" />
+                <meta property="og:site_name" content="Romaria Fluvial Muiraquitã" />
                 <meta property="og:title" content={pacote.title} />
                 <meta property="og:description" content={metaDescription} />
                 <meta property="og:url" content={shareUrl} />
@@ -288,7 +288,7 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
                                                         "url": "${shareUrl}",
                                                         "brand": {
                                                                 "@type": "Brand",
-                                                                "name": "D' Hages Turismo"
+                                                                "name": "Romaria Fluvial Muiraquitã"
                                                         },
                                                         "offers": {
                                                                 "@type": "Offer",
@@ -298,7 +298,7 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
                                                                 "availability": "${availableDates && availableDates.length > 0 ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock'}",
                                                                 "seller": {
                                                                         "@type": "TravelAgency",
-                                                                        "name": "D' Hages Turismo"
+                                                                        "name": "Romaria Fluvial Muiraquitã"
                                                                 }
                                                         }
                                                 }
@@ -458,7 +458,7 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
                             <ul className="list-disc list-inside space-y-1 text-neutral-700">
                                 <li>Transporte em ônibus de turismo</li>
                                 <li>Hospedagem com café da manhã</li>
-                                <li>Guia acompanhante D' Hages Turismo</li>
+                                <li>Guia acompanhante Romaria Fluvial Muiraquitã</li>
                             </ul>
                             <h3 className="text-lg font-semibold text-primary-800 mt-6 mb-2 uppercase">Informações Importantes:</h3>
                             <ul className="list-disc list-inside space-y-1 text-neutral-700">

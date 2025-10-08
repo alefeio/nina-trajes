@@ -17,7 +17,7 @@ export const authOptions: NextAuthOptions = {
                 await resend.emails.send({
                     from: from || "contato@dhagesturismo.com.br",
                     to: email,
-                    subject: "Link de login para o D' Hages Turismo",
+                    subject: "Link de login para o Romaria Fluvial Muiraquitã",
                     html: `Clique neste link para entrar: <a href="${url}">${url}</a>`,
                 });
             },
