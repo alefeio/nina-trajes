@@ -48,11 +48,11 @@ export function Menu({ menuData }: MenuProps) {
   const { logoUrl, links } = menuData;
 
   const authButton = status === 'loading' ? (
-    <span className="text-gray-400">Carregando...</span>
+    <span className="text-blue-400">Carregando...</span>
   ) : session && (
     <Link
       href="/admin"
-      className="relative text-gray-100 hover:text-orange-500 transition-colors duration-300 group flex items-center gap-1"
+      className="relative text-blue-100 hover:text-orange-500 transition-colors duration-300 group flex items-center gap-1"
       onClick={() => setMenuOpen(false)}
     >
       <MdAccountCircle className="w-5 h-5" /> Minha Conta
@@ -61,12 +61,12 @@ export function Menu({ menuData }: MenuProps) {
   );
 
   const authButtonMobile = status === 'loading' ? (
-    <li className="block py-2 text-gray-400 border-b border-gray-700">Carregando...</li>
+    <li className="block py-2 text-blue-400 border-b border-blue-700">Carregando...</li>
   ) : session && (
     <li>
       <Link
         href="/admin"
-        className="block py-2 hover:text-orange-500 transition-colors border-b border-gray-700 flex items-center gap-2"
+        className="block py-2 hover:text-orange-500 transition-colors border-b border-blue-700 flex items-center gap-2"
         onClick={() => setMenuOpen(false)}
       >
         <MdAccountCircle className="w-5 h-5" /> Minha Conta
@@ -77,8 +77,8 @@ export function Menu({ menuData }: MenuProps) {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${isScrolled
-          ? "bg-gray-700/95 backdrop-blur-sm py-3 shadow-lg"
-          : "bg-gray-700/10 backdrop-blur-sm py-4"
+          ? "bg-blue-700/95 backdrop-blur-sm py-3 shadow-lg"
+          : "bg-blue-700/10 backdrop-blur-sm py-4"
         }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8">
@@ -97,7 +97,7 @@ export function Menu({ menuData }: MenuProps) {
             <Link
               key={url}
               href={url}
-              className="relative text-gray-100 hover:text-orange-500 transition-colors duration-300 group"
+              className="relative text-blue-100 hover:text-orange-500 transition-colors duration-300 group"
               onClick={() => setMenuOpen(false)}
               target={target}
             >
@@ -110,7 +110,7 @@ export function Menu({ menuData }: MenuProps) {
 
         {/* Botão Hamburger */}
         <button
-          className="md:hidden flex items-center justify-center p-2 rounded-md bg-gray-800/70 text-orange-500 hover:bg-gray-700/80 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500"
+          className="md:hidden flex items-center justify-center p-2 rounded-md bg-blue-800/70 text-orange-500 hover:bg-blue-700/80 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500"
           onClick={() => setMenuOpen((v) => !v)}
           aria-label="Abrir menu"
           aria-expanded={menuOpen}
@@ -127,25 +127,25 @@ export function Menu({ menuData }: MenuProps) {
       {/* Menu Mobile */}
       <nav
         id="mobile-menu"
-        className={`fixed inset-0 w-full h-[100dvh] bg-gray-800 z-50 md:hidden flex flex-col shadow-xl transform transition-transform duration-300 ease-in-out ${menuOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed inset-0 w-full h-[100dvh] bg-blue-800 z-50 md:hidden flex flex-col shadow-xl transform transition-transform duration-300 ease-in-out ${menuOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
         <div className="flex justify-end p-6">
           <button
             onClick={() => setMenuOpen(false)}
-            className="p-2 rounded-md text-gray-100 bg-gray-700 hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="p-2 rounded-md text-blue-100 bg-blue-700 hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500"
             aria-label="Fechar menu"
           >
             <MdClose className="w-6 h-6" />
           </button>
         </div>
 
-        <ul className="flex-1 overflow-y-auto flex flex-col gap-4 font-semibold text-gray-100 px-6 pb-8 list-none">
+        <ul className="flex-1 overflow-y-auto flex flex-col gap-4 font-semibold text-blue-100 px-6 pb-8 list-none">
           {links.map(({ text, url, target }) => (
             <li key={url}>
               <Link
                 href={url}
-                className="block py-2 hover:text-orange-500 transition-colors border-b border-gray-700 last:border-b-0"
+                className="block py-2 hover:text-orange-500 transition-colors border-b border-blue-700 last:border-b-0"
                 onClick={() => setMenuOpen(false)}
                 target={target}
               >
