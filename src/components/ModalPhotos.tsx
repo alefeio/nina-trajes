@@ -212,26 +212,6 @@ export default function ModalPhotos({ pacote, onClose, shareUrl }: ModalPhotosPr
                                 )}
                             </div>
 
-                            <div className="border-t border-neutral-200 pt-4">
-                                <h3 className="text-lg font-semibold text-primary-800 mb-2 uppercase">Saídas:</h3>
-                                {availableDates?.length > 0 ? (
-                                    <div className="flex flex-wrap gap-4 justify-start">
-                                        {availableDates.map((date, index) => (
-                                            <PacoteDate
-                                                key={index}
-                                                pacoteId={pacote.id}
-                                                date={date}
-                                                shareUrl={shareUrl}
-                                                formatPrice={formatPrice}
-                                                pacote={pacote}
-                                            />
-                                        ))}
-                                    </div>
-                                ) : (
-                                    <p className="text-sm text-neutral-500">Nenhuma data de saída disponível no momento.</p>
-                                )}
-                            </div>
-
                             <div className="mt-6 border-t border-neutral-200 pt-4">
                                 <h3 className="text-lg font-semibold text-primary-800 mb-2 uppercase">Detalhes do Pacote:</h3>
                                 <div className="prose prose-sm max-w-none text-neutral-700" dangerouslySetInnerHTML={{ __html: richTextToHtml(pacote.description) }} />

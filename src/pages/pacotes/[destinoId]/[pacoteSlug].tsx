@@ -406,49 +406,6 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
                                 <span>Site</span>
                             </Link>
                         </div>
-                        <div className="border-t border-neutral-200 pt-4 mt-6">
-                            <h3 className="text-lg font-semibold text-primary-800 mb-3 uppercase">Próximas Saídas:</h3>
-                            {availableDates?.length > 0 ? (
-                                <div className="flex flex-wrap gap-4 justify-start">
-                                    {availableDates.map((date, index) => {
-                                        const whatsappText = `Olá! Gostaria de mais informações sobre o pacote: *${pacote.title}*.\n\n` +
-                                            `Data de Saída: *${format(date.saida, 'dd/MM/yyyy', { locale: ptBR })}*\n` +
-                                            (date.retorno ? `Data de Retorno: *${format(date.retorno, 'dd/MM/yyyy', { locale: ptBR })}*\n` : '') +
-                                            `\nLink para o pacote: ${shareUrl}`; // ALTERAÇÃO: Usa a URL completa
-
-                                        return (
-                                            <div key={index} className="flex flex-col p-4 border border-neutral-300 rounded-lg shadow-sm bg-gray-50 flex-grow-0 flex-shrink-0 min-w-[200px]">
-                                                <span className="font-bold text-lg text-primary-800 mb-1">
-                                                    Saída: {format(date.saida, 'dd/MM/yyyy', { locale: ptBR })}
-                                                </span>
-                                                {date.retorno && (
-                                                    <span className="text-sm text-neutral-600 mb-2">
-                                                        Retorno: {format(date.retorno, 'dd/MM/yyyy', { locale: ptBR })}
-                                                    </span>
-                                                )}
-                                                {date.notes && <span className="text-xs text-neutral-500 mb-2"> ({date.notes})</span>}
-                                                <div className="flex flex-col mt-auto pt-2 border-t border-neutral-200">
-                                                    <span className="text-primary-800 font-bold text-xl">{formatPrice(date.price)}</span>
-                                                    <span className="text-sm text-neutral-600">à vista no Pix</span>
-                                                    <span className="text-sm text-neutral-600">ou <span className="font-medium">{formatPrice(date.price_card)}</span> no cartão</span>
-                                                </div>
-                                                <a
-                                                    href={`https://wa.me/5591981149800?text=${encodeURIComponent(whatsappText)}`}
-                                                    onClick={() => handlePreReservaClick(date.saida.toISOString())}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="mt-4 flex items-center justify-center gap-2 text-white bg-green-600 hover:bg-green-700 font-bold py-2 px-4 rounded-full transition-colors"
-                                                >
-                                                    <FaWhatsapp size={18} className='text-white' /> Mais Informações
-                                                </a>
-                                            </div>
-                                        );
-                                    })}
-                                </div>
-                            ) : (
-                                <p className="text-base text-neutral-500">Nenhuma data de saída disponível no momento. Entre em contato para mais informações!</p>
-                            )}
-                        </div>
                         <div className="mt-8 border-t border-neutral-200 pt-4">
                             <h3 className="text-lg font-semibold text-primary-800 mb-2 uppercase">Detalhes do Pacote:</h3>
                             <div className="prose prose-sm sm:prose-base max-w-none text-neutral-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: richTextToHtml(pacote.description) }} />

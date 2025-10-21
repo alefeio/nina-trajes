@@ -280,20 +280,6 @@ export function GallerySection({ destino, onOpenModal, buttonHref }: GallerySect
                                             <p className="text-sm text-neutral-600 mb-4">{pacote.subtitle}</p>
                                         )}
 
-                                        {hasDates && (
-                                            <div className="mb-4 text-sm text-neutral-700">
-                                                <p className="font-bold">{availableDates.length > 1 ? 'Próximas Saídas:' : 'Próxima Saída:'}</p>
-                                                {availableDates.slice(0, 3).map((date, index) => (
-                                                    <p key={index}>
-                                                        {format(new Date(date.saida), 'dd/MM/yyyy', { locale: ptBR })}
-                                                    </p>
-                                                ))}
-                                                {availableDates.length > 3 && (
-                                                    <p>...</p>
-                                                )}
-                                            </div>
-                                        )}
-
                                         <div className="mt-auto pt-4 border-t border-neutral-200">
                                             {/* {firstDate && (
                                                 <div className="flex justify-between items-end mb-4">
