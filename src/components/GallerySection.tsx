@@ -211,7 +211,7 @@ export function GallerySection({ destino, onOpenModal, buttonHref }: GallerySect
                         return (
                             <div
                                 key={pacote.id}
-                                className="z-20 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden flex flex-col cursor-pointer"
+                                className="z-20 bg-white m-6 md:m-2 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden flex flex-col cursor-pointer"
                                 onClick={() => handleItemClick(pacote.id)}
                             >
                                 <div className="flex flex-col sm:flex-row h-full">

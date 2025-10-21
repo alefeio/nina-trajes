@@ -52,11 +52,11 @@ export function MenuInterno({ menuData }: MenuProps) {
   ) : session && (
     <Link
       href="/admin"
-      className="relative text-gray-100 hover:text-orange-500 transition-colors duration-300 group flex items-center gap-1"
+      className="relative text-gray-100 hover:text-pink-500 transition-colors duration-300 group flex items-center gap-1"
       onClick={() => setMenuOpen(false)}
     >
       <MdAccountCircle className="w-5 h-5" /> Minha Conta
-      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-500 transition-all duration-300 group-hover:w-full"></span>
     </Link>
   );
 
@@ -66,7 +66,7 @@ export function MenuInterno({ menuData }: MenuProps) {
     <li>
       <Link
         href="/admin"
-        className="block py-2 hover:text-orange-500 transition-colors border-b border-gray-700 flex items-center gap-2"
+        className="block py-2 hover:text-pink-500 transition-colors border-b border-gray-700 flex items-center gap-2"
         onClick={() => setMenuOpen(false)}
       >
         <MdAccountCircle className="w-5 h-5" /> Minha Conta
@@ -97,12 +97,12 @@ export function MenuInterno({ menuData }: MenuProps) {
             <Link
               key={url}
               href={url}
-              className="relative text-gray-100 hover:text-orange-500 transition-colors duration-300 group"
+              className="relative text-gray-100 hover:text-pink-500 transition-colors duration-300 group"
               onClick={() => setMenuOpen(false)}
               target={target}
             >
               {text}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-pink-500 transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
           {authButton}
@@ -110,7 +110,7 @@ export function MenuInterno({ menuData }: MenuProps) {
 
         {/* Botão Hamburger */}
         <button
-          className="md:hidden flex items-center justify-center p-2 rounded-md bg-gray-800/70 text-orange-500 hover:bg-gray-700/80 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500"
+          className="md:hidden flex items-center justify-center p-2 rounded-md bg-gray-800/70 text-pink-500 hover:bg-gray-700/80 transition-colors focus:outline-none focus:ring-2 focus:ring-pink-500"
           onClick={() => setMenuOpen((v) => !v)}
           aria-label="Abrir menu"
           aria-expanded={menuOpen}
@@ -133,7 +133,7 @@ export function MenuInterno({ menuData }: MenuProps) {
         <div className="flex justify-end p-6">
           <button
             onClick={() => setMenuOpen(false)}
-            className="p-2 rounded-md text-gray-100 bg-gray-700 hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="p-2 rounded-md text-gray-100 bg-gray-700 hover:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-pink-500"
             aria-label="Fechar menu"
           >
             <MdClose className="w-6 h-6" />
@@ -145,7 +145,7 @@ export function MenuInterno({ menuData }: MenuProps) {
             <li key={url}>
               <Link
                 href={url}
-                className="block py-2 hover:text-orange-500 transition-colors border-b border-gray-700 last:border-b-0"
+                className="block py-2 hover:text-pink-500 transition-colors border-b border-gray-700 last:border-b-0"
                 onClick={() => setMenuOpen(false)}
                 target={target}
               >

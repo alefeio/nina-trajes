@@ -82,7 +82,7 @@ export default function PacotesGallery({ destinos }: PacotesGalleryProps) {
                     <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 leading-tight text-pink-900  ">
                         Bem-vinda à Nina Trajes ✨
                     </h2>
-                    <p className="text-neutral-700 max-w-7xl mx-auto text-lg px-4">
+                    <p className="text-neutral-700 max-w-2xl mx-auto text-lg px-4">
                         Na Nina Trajes, acreditamos que cada mulher merece sentir-se única em seus momentos especiais — com praticidade, conforto e muito estilo.
                     </p>
                 </div>

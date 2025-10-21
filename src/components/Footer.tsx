@@ -68,7 +68,7 @@ const Footer = ({ menuData }: MenuProps) => {
                                         <Link
                                             key={link.url}
                                             href={link.url}
-                                            className="text-black/70 hover:text-orange-500 transition-colors text-black/70"
+                                            className="text-black/70 hover:text-pink-500 transition-colors text-black/70"
                                             target={link.target}
                                         >
                                             {link.text}
@@ -83,7 +83,7 @@ const Footer = ({ menuData }: MenuProps) => {
                             <h4 className="font-bold text-white text-lg mb-4">Contato</h4>
                             <div className="space-y-2">
                                 <p>
-                                    <a href="tel:+5591981149800" className="hover:text-orange-500 transition-colors text-black/70">
+                                    <a href="tel:+5591981149800" className="hover:text-pink-500 transition-colors text-black/70">
                                         +55 (91) 98114-9800
                                     </a>
                                 </p>

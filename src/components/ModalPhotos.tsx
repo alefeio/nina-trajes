@@ -188,7 +188,7 @@ export default function ModalPhotos({ pacote, onClose, shareUrl }: ModalPhotosPr
                     {/* Área de conteúdo rolável */}
                     <div className="flex-grow overflow-y-auto">
                         <div className="p-6">
-                            <h2 className="text-3xl font-bold font-serif mb-2 text-orange-500">{pacote.title}</h2>
+                            <h2 className="text-3xl font-bold font-serif mb-2 text-pink-500">{pacote.title}</h2>
                             {pacote.subtitle && <p className="text-base text-neutral-600 mb-4">{pacote.subtitle}</p>}
 
                             <div className="flex items-center gap-4 my-4">
@@ -220,7 +220,7 @@ export default function ModalPhotos({ pacote, onClose, shareUrl }: ModalPhotosPr
                             </div>
 
                             <div className="mt-6 border-t border-neutral-200 pt-4">
-                                <h3 className="text-lg font-semibold text-pink-800 mb-2 uppercase">Detalhes do Pacote:</h3>
+                                <h3 className="text-lg font-semibold text-pink-800 mb-2 uppercase">Detalhes do Vestido:</h3>
                                 <div className="prose prose-sm max-w-none text-neutral-700" dangerouslySetInnerHTML={{ __html: richTextToHtml(pacote.description) }} />
                             </div>
                         </div>
@@ -239,7 +239,7 @@ export default function ModalPhotos({ pacote, onClose, shareUrl }: ModalPhotosPr
                         {canShare && (
                             <button
                                 onClick={handleShare}
-                                className="flex-1 bg-pink-600 hover:bg-pink-700 text-white text-xs md:text-base font-bold py-3 px-6 rounded-full transition-colors flex items-center justify-center gap-2"
+                                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-xs md:text-base font-bold py-3 px-6 rounded-full transition-colors flex items-center justify-center gap-2"
                             >
                                 <FaShareAlt className="text-white" /> Compartilhar
                             </button>

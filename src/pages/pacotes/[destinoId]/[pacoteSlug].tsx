@@ -356,7 +356,7 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
                     </div>
 
                     <div className="p-4 md:p-6 lg:p-8">
-                        <h1 className="text-3xl sm:text-4xl font-bold font-serif text-orange-500 mb-2">{pacote.title}</h1>
+                        <h1 className="text-3xl sm:text-4xl font-bold font-serif text-pink-500 mb-2">{pacote.title}</h1>
                         {pacote.subtitle && <p className="text-base sm:text-lg text-neutral-600 mb-4">{pacote.subtitle}</p>}
                         <div className="flex items-center gap-4 my-4 flex-wrap">
                             <button
@@ -389,7 +389,7 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
                             </Link>
                         </div>
                         <div className="mt-8 border-t border-neutral-200 pt-4">
-                            <h3 className="text-lg font-semibold text-pink-800 mb-2 uppercase">Detalhes do Pacote:</h3>
+                            <h3 className="text-lg font-semibold text-pink-800 mb-2 uppercase">Detalhes do Vestido:</h3>
                             <div className="prose prose-sm sm:prose-base max-w-none text-neutral-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: richTextToHtml(pacote.description) }} />
                         </div>
                         <div className="mt-8 border-t border-neutral-200 pt-4">

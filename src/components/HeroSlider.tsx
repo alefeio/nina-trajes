@@ -117,7 +117,7 @@ export default function HeroSlider({ banners }: HeroSliderProps) {
                 <div className="mt-4">
                   <Link href={slides[current].link} passHref>
                     <button
-                      className={`inline-block py-3 px-8 rounded-full font-bold transition-all duration-300 transform hover:-translate-y-1 shadow-xl hover:shadow-2xl ${slides[current].buttonColor || "bg-orange-500 hover:bg-orange-600"} text-white`}
+                      className={`inline-block py-3 px-8 rounded-full font-bold transition-all duration-300 transform hover:-translate-y-1 shadow-xl hover:shadow-2xl ${slides[current].buttonColor || "bg-pink-500 hover:bg-pink-600"} text-white`}
                     >
                       {slides[current].buttonText}
                     </button>
@@ -134,7 +134,7 @@ export default function HeroSlider({ banners }: HeroSliderProps) {
         {slides.map((_, idx) => (
           <button
             key={idx}
-            className={`w-4 h-4 rounded-full transition-colors duration-300 ${idx === current ? "bg-orange-500" : "bg-gray-400 hover:bg-gray-200"}`} // Cores e tamanho ajustados
+            className={`w-4 h-4 rounded-full transition-colors duration-300 ${idx === current ? "bg-pink-500" : "bg-gray-400 hover:bg-gray-200"}`} // Cores e tamanho ajustados
             onClick={() => setCurrent(idx)}
             aria-label={`Ir para slide ${idx + 1}`}
           />

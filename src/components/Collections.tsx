@@ -111,7 +111,7 @@ export const collections = {
                 Os vestidos laranjas transmitem alegria, criatividade e espontaneidade. São perfeitos para quem deseja um visual vibrante e inesquecível em eventos diurnos, festas ao ar livre ou qualquer ocasião onde o brilho da sua energia deve ser destaque.
             </p>
         ),
-        bgcolor: "bg-orange-600",
+        bgcolor: "bg-pink-600",
         buttonText: "Solicitar Catálogo de Vestidos Laranjas",
         items: [
             { id: 1, img: "/images/dresses/laranja1.jpg", productMark: "", productModel: "", cor: "Laranja" },
