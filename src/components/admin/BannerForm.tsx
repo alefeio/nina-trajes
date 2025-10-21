@@ -199,7 +199,7 @@ export default function BannerForm() {
                     <input
                         type="file"
                         onChange={handleFileChange}
-                        className="w-full text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+                        className="w-full text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md py-2 px-3 focus:outline-none focus:border-pink-500"
                     />
                 </div>
                 <div>
@@ -243,13 +243,13 @@ export default function BannerForm() {
                     />
                 </div>
                 <div>
-                    <label className="block text-gray-700 dark:text-gray-300 font-bold mb-2">Cor do Botão (Classe Tailwind. Ex: bg-blue-600)</label>
+                    <label className="block text-gray-700 dark:text-gray-300 font-bold mb-2">Cor do Botão (Classe Tailwind. Ex: bg-pink-600)</label>
                     <input
                         type="text"
                         value={newButtonColor}
                         onChange={(e) => setNewButtonColor(e.target.value)}
                         className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500"
-                        placeholder="Ex: bg-blue-600 ou bg-green-500"
+                        placeholder="Ex: bg-pink-600 ou bg-green-500"
                     />
                 </div>
                 <div className="flex items-center">
@@ -257,7 +257,7 @@ export default function BannerForm() {
                         type="checkbox"
                         checked={newTarget}
                         onChange={(e) => setNewTarget(e.target.checked)}
-                        className="mr-2 h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-blue-500"
+                        className="mr-2 h-4 w-4 text-pink-600 border-gray-300 rounded focus:ring-pink-500 dark:bg-gray-700 dark:border-gray-600 dark:text-pink-500"
                     />
                     <label className="text-gray-700 dark:text-gray-300">Abrir em nova aba?</label>
                 </div>
@@ -283,7 +283,7 @@ export default function BannerForm() {
                                 <button
                                     type="button"
                                     onClick={() => handleEditBanner(banner)}
-                                    className="bg-blue-600 text-white rounded-full p-2 hover:bg-blue-700 dark:hover:bg-blue-800 transition-colors"
+                                    className="bg-pink-600 text-white rounded-full p-2 hover:bg-pink-700 dark:hover:bg-pink-800 transition-colors"
                                     title="Editar Banner"
                                     aria-label="Editar Banner"
                                 >

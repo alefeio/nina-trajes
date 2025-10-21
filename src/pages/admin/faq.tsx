@@ -141,7 +141,7 @@ const FaqPage = ({ faqs }: FaqPageProps) => {
           </div>
           <button
             type="submit"
-            className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-neutral-50 bg-blue-600 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
+            className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-neutral-50 bg-pink-600 hover:bg-pink-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500"
             disabled={loading}
           >
             {loading ? 'Salvando...' : editId ? 'Salvar Alterações' : 'Adicionar FAQ'}
@@ -172,7 +172,7 @@ const FaqPage = ({ faqs }: FaqPageProps) => {
               <div className="flex space-x-2 ml-4">
                 <button
                   onClick={() => handleEditClick(faq)}
-                  className="bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-600 transition duration-200"
+                  className="bg-pink-600 text-white p-2 rounded-lg hover:bg-pink-600 transition duration-200"
                 >
                   <MdEdit size={20} className="text-white" />
                 </button>

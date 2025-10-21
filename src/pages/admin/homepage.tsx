@@ -238,7 +238,7 @@ export default function HomepageAdmin() {
           <div className="flex flex-wrap gap-4">
             <button
               onClick={() => setSections([...sections, { id: `new-${Date.now()}`, type: 'custom', order: sections.length, content: { title: "Nova Sessão Personalizada", text: "Este é o conteúdo.", style: {} } }])}
-              className="bg-blue-600 text-white px-4 py-2 rounded-md flex items-center gap-2 hover:bg-blue-600"
+              className="bg-pink-600 text-white px-4 py-2 rounded-md flex items-center gap-2 hover:bg-pink-600"
             >
               <FaPlus /> Sessão Personalizada
             </button>
@@ -254,10 +254,10 @@ export default function HomepageAdmin() {
                 <div className="flex justify-between items-center mb-2">
                   <span className="font-semibold">{index + 1}. {section.type.charAt(0).toUpperCase() + section.type.slice(1)}</span>
                   <div className="flex gap-2">
-                    <button onClick={() => handleMove(section.id, "up")} className="text-gray-500 hover:text-blue-500 disabled:opacity-50" disabled={index === 0}>
+                    <button onClick={() => handleMove(section.id, "up")} className="text-gray-500 hover:text-pink-500 disabled:opacity-50" disabled={index === 0}>
                       <FaArrowUp />
                     </button>
-                    <button onClick={() => handleMove(section.id, "down")} className="text-gray-500 hover:text-blue-500 disabled:opacity-50" disabled={index === sections.length - 1}>
+                    <button onClick={() => handleMove(section.id, "down")} className="text-gray-500 hover:text-pink-500 disabled:opacity-50" disabled={index === sections.length - 1}>
                       <FaArrowDown />
                     </button>
                     <button onClick={() => setEditingId(section.id)} className="text-gray-500 hover:text-green-500">

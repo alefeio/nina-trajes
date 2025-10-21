@@ -5,7 +5,7 @@
 /* Global Styles */
 
 body {
-  @apply font-sans bg-primary-50 text-neutral-900;
+  @apply font-sans bg-pink-50 text-neutral-900;
 }
 
 html {
@@ -36,11 +36,11 @@ a:hover {
 /* Botões */
 
 .btn {
-  @apply inline-block px-6 py-2 rounded-md font-semibold text-white bg-primary-500 hover:bg-primary-600 transition duration-300;
+  @apply inline-block px-6 py-2 rounded-md font-semibold text-white bg-pink-500 hover:bg-pink-600 transition duration-300;
 }
 
 .btn-outline {
-  @apply inline-block px-6 py-2 rounded-md font-semibold border border-primary-500 text-neutral-500 bg-transparent hover:bg-primary-500 hover:text-white transition duration-300;
+  @apply inline-block px-6 py-2 rounded-md font-semibold border border-pink-500 text-neutral-500 bg-transparent hover:bg-pink-500 hover:text-white transition duration-300;
 }
 
 .btn-disabled {
@@ -54,7 +54,7 @@ input[type="email"],
 input[type="password"],
 textarea,
 select {
-  @apply w-full px-4 py-2 border border-primary-300 rounded-md bg-primary-100 text-neutral-900 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:border-primary-400 transition duration-200;
+  @apply w-full px-4 py-2 border border-pink-300 rounded-md bg-pink-100 text-neutral-900 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:border-pink-400 transition duration-200;
 }
 
 label {
@@ -64,7 +64,7 @@ label {
 /* Cards */
 
 .card {
-  @apply bg-primary-100 shadow-lg rounded-xl p-6;
+  @apply bg-pink-100 shadow-lg rounded-xl p-6;
 }
 
 /* Títulos de seção */

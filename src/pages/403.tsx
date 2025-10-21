@@ -7,7 +7,7 @@ export default function AccessDenied() {
         <h1 className="text-4xl font-bold text-red-600 mb-4">403 - Acesso Negado</h1>
         <p className="text-gray-700 mb-6">Você não tem permissão para visualizar esta página.</p>
         <Link href="/">
-          <p className="text-blue-500 hover:underline">Voltar para a página inicial</p>
+          <p className="text-pink-500 hover:underline">Voltar para a página inicial</p>
         </Link>
       </div>
     </div>

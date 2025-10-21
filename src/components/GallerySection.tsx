@@ -153,11 +153,12 @@ export function GallerySection({ destino, onOpenModal, buttonHref }: GallerySect
     const backgroundImage = destino.image || '/placeholder.jpg';
 
     // Removido: pacotesComDatasFuturas e sua lógica de filtragem
-    const pacotesDisponiveis = destino.pacotes; 
+    const pacotesDisponiveis = destino.pacotes;
 
     return (
         <article className="py-8 bg-">
-            <div className="relative w-full py-24 overflow-hidden">
+            <div className="relative w-full pt-20 pb-80 overflow-hidden">
+                <div id="colecao">&nbsp;</div>
                 {isVideo(backgroundImage) ? (
                     <video
                         src={backgroundImage}
@@ -178,28 +179,28 @@ export function GallerySection({ destino, onOpenModal, buttonHref }: GallerySect
                     />
                 )}
 
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-100 to-blue-100/0 backdrop-blur-xs z-0"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-pink-100 to-pink-100/0 backdrop-blur-xs z-0"></div>
 
                 <div className="relative z-10 flex flex-col justify-center items-center h-full text-center md:mt-16">
-                    <h2 className="font-serif text-3xl md:text-5xl font-bold mb-4 rounded-xl text-gray-900 px-4 py-2 drop-shadow-lg">
+                    <h2 className="font-serif text-3xl md:text-5xl font-bold mb-4 rounded-xl text-pink-900 px-4 py-2  ">
                         {destino.title}
                     </h2>
-                    <p className="text-xl md:text-2xl text-gray-900 max-w-2xl px-4 drop-shadow-md">
+                    <p className="text-xl md:text-2xl text-gray-900 max-w-2xl px-4  ">
                         {destino.subtitle}
                     </p>
                     {destino.description?.html && (
                         <div
-                            className="text-white text-md mt-4 max-w-2xl px-4 drop-shadow-md"
+                            className="text-white text-md mt-4 max-w-2xl px-4  "
                             dangerouslySetInnerHTML={{ __html: destino.description.html }}
                         />
                     )}
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-2 md:px-4 py-12">
-                <div className="grid grid-cols-2 gap-2 md:gap-8">
+            <div className="max-w-7xl mx-auto px-2 md:px-4 mt-[-16rem]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8">
                     {/* Alterado de pacotesComDatasFuturas para pacotesDisponiveis */}
-                    {pacotesDisponiveis.map(pacote => { 
+                    {pacotesDisponiveis.map(pacote => {
                         const shareUrl = `${originUrl}/pacotes/${destino.slug}/${pacote.slug}`;
                         const firstMedia = pacote.fotos[0] || { url: '/placeholder.jpg' };
                         const isFirstMediaVideo = isVideo(firstMedia.url);
@@ -207,19 +208,14 @@ export function GallerySection({ destino, onOpenModal, buttonHref }: GallerySect
                         const currentLikes = pacoteStats[pacote.id]?.like ?? pacote.like ?? 0;
                         const currentViews = pacoteStats[pacote.id]?.view ?? pacote.view ?? 0;
 
-                        // Removido: lógica de availableDates, hasDates, firstDate e formatPrice
-                        // const availableDates = pacote.dates?.filter(date => new Date(date.saida) >= new Date()).sort((a, b) => new Date(a.saida).getTime() - new Date(b.saida).getTime());
-                        // const hasDates = availableDates && availableDates.length > 0;
-                        // const firstDate = hasDates ? availableDates[0] : null;
-
                         return (
                             <div
                                 key={pacote.id}
-                                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden flex flex-col cursor-pointer"
-                                onClick={() => handleItemClick(pacote.id)} 
+                                className="z-20 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden flex flex-col cursor-pointer"
+                                onClick={() => handleItemClick(pacote.id)}
                             >
                                 <div className="flex flex-col sm:flex-row h-full">
-                                    <div className="relative w-full h-72 sm:w-1/2 sm:h-auto">
+                                    <div className="relative w-full h-[36rem] sm:w-2/3">
                                         {isFirstMediaVideo ? (
                                             <>
                                                 <video
@@ -273,8 +269,8 @@ export function GallerySection({ destino, onOpenModal, buttonHref }: GallerySect
                                             </button>
                                         </div>
                                     </div>
-                                    <div className="p-4 flex flex-col flex-grow w-full sm:w-1/2">
-                                        <h3 className="font-serif text-lg md:text-2xl font-semibold mb-1 text-orange-500">{pacote.title}</h3>
+                                    <div className="p-4 flex flex-col flex-grow w-full sm:w-1/3">
+                                        <h3 className="font-serif text-lg md:text-2xl font-semibold mb-1 text-pink-500">{pacote.title}</h3>
                                         {pacote.subtitle && (
                                             <p className="text-sm text-neutral-600 mb-4">{pacote.subtitle}</p>
                                         )}
@@ -283,27 +279,25 @@ export function GallerySection({ destino, onOpenModal, buttonHref }: GallerySect
                                             {/* Removido: Bloco de código JSX para exibição de preço e datas */}
 
                                             <div className="flex justify-between items-center gap-2">
-                                                <a
-                                                    href={`https://wa.me/5591981149800?text=Olá! Gostaria de mais informações sobre o pacote de ${destino.title}: ${pacote.title}. Link: ${encodeURIComponent(shareUrl)}`}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="flex-1 inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white rounded-full shadow-md py-3 font-bold transition-colors duration-300"
-                                                    aria-label="Reservar via WhatsApp"
+
+                                                <button
                                                     onClick={(e) => {
                                                         e.stopPropagation();
                                                         handleWhatsappClick(pacote.id);
                                                     }}
+                                                    className="inline-flex items-center justify-center bg-green-600 hover:bg-pink-700 text-white rounded-full shadow-md p-3 transition-colors duration-300"
+                                                    aria-label="Compartilhar"
+                                                    disabled={isSharing}
                                                 >
-                                                    <FaWhatsapp className="mr-2 text-white" />
-                                                    Reservar
-                                                </a>
+                                                    <FaWhatsapp className="w-5 h-5 text-white" />
+                                                </button>
                                                 {canShare && (
                                                     <button
                                                         onClick={(e) => {
                                                             e.stopPropagation();
                                                             handleShare(pacote, shareUrl);
                                                         }}
-                                                        className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-md p-3 transition-colors duration-300"
+                                                        className="inline-flex items-center justify-center bg-pink-600 hover:bg-pink-700 text-white rounded-full shadow-md p-3 transition-colors duration-300"
                                                         aria-label="Compartilhar"
                                                         disabled={isSharing}
                                                     >

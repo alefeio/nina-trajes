@@ -43,7 +43,7 @@ export default function LocationMap() {
                 {/* Conteúdo do componente */}
                 <div className="relative z-10 py-16 text-white">
                     <div className="mb-12 text-center">
-                        <h2 className="text-white font-serif text-4xl md:text-5xl font-bold mb-4 leading-tight drop-shadow-md">
+                        <h2 className="text-white font-serif text-4xl md:text-5xl font-bold mb-4 leading-tight  ">
                             Onde Estamos
                         </h2>
                         <p className="text-white text-lg max-w-2xl mx-auto">
@@ -55,7 +55,7 @@ export default function LocationMap() {
                         {/* Mapa - Reduzido */}
                         <div className="w-full h-72 md:w-1/2 rounded-xl overflow-hidden shadow-lg mb-6 md:mb-0">
                             <iframe
-                                title="Localização da Romaria Fluvial Muiraquitã em Belém"
+                                title="Localização da Nina Trajes em Belém"
                                 src={googleMapsEmbedUrl}
                                 width="100%"
                                 height="100%"
@@ -69,7 +69,7 @@ export default function LocationMap() {
                         {/* Informações de Contato e Redes Sociais */}
                         <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
                             <address className="not-italic mb-6">
-                                <span className="font-semibold text-lg block">Romaria Fluvial Muiraquitã</span>
+                                <span className="font-semibold text-lg block">Nina Trajes</span>
                                 <span className="block">{address}</span>
                                 <span className="block">Horário de funcionamento: das 08:00 às 18:00</span>
                                 <a

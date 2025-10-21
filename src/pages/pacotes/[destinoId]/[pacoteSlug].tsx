@@ -70,7 +70,7 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
     if (router.isFallback) {
         return (
             <div className="flex justify-center items-center h-screen bg-gray-100">
-                <div className="text-xl font-semibold text-primary-800">Carregando...</div>
+                <div className="text-xl font-semibold text-pink-800">Carregando...</div>
             </div>
         );
     }
@@ -212,9 +212,9 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
 
     const metaDescription = pacote.subtitle
         ? pacote.subtitle
-        : `Descubra o pacote de viagem ${pacote.title} com a Romaria Fluvial Muiraquitã. Confira detalhes para sua próxima aventura.`;
+        : `Descubra o pacote de viagem ${pacote.title} com a Nina Trajes. Confira detalhes para sua próxima aventura.`;
 
-    const keywords = `${pacote.title}, ${pacote.subtitle || ''}, Romaria Fluvial Muiraquitã, viagens, pacotes turísticos, ${pacote.destinoId.split('-')[0]}, ${pacote.slug}`
+    const keywords = `${pacote.title}, ${pacote.subtitle || ''}, Nina Trajes, viagens, pacotes turísticos, ${pacote.destinoId.split('-')[0]}, ${pacote.slug}`
         .split(',')
         .map(keyword => keyword.trim())
         .filter(keyword => keyword.length > 0)
@@ -223,13 +223,13 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
     return (
         <>
             <Head>
-                <title>{pacote.title} | Romaria Fluvial Muiraquitã</title>
+                <title>{pacote.title} | Nina Trajes</title>
                 <meta name="description" content={metaDescription} />
                 <meta name="keywords" content={keywords} />
                 <link rel="canonical" href={shareUrl} />
                 <meta name="robots" content="index, follow" />
                 <meta property="og:locale" content="pt_BR" />
-                <meta property="og:site_name" content="Romaria Fluvial Muiraquitã" />
+                <meta property="og:site_name" content="Nina Trajes" />
                 <meta property="og:title" content={pacote.title} />
                 <meta property="og:description" content={metaDescription} />
                 <meta property="og:url" content={shareUrl} />
@@ -270,7 +270,7 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
                                                     "url": "${shareUrl}",
                                                     "brand": {
                                                             "@type": "Brand",
-                                                            "name": "Romaria Fluvial Muiraquitã"
+                                                            "name": "Nina Trajes"
                                                     },
                                                     "offers": {
                                                             "@type": "Offer",
@@ -280,7 +280,7 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
                                                             "availability": "https://schema.org/OutOfStock",
                                                             "seller": {
                                                                     "@type": "TravelAgency",
-                                                                    "name": "Romaria Fluvial Muiraquitã"
+                                                                    "name": "Nina Trajes"
                                                             }
                                                     }
                                                 }
@@ -369,7 +369,7 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
                             </button>
                             <button
                                 onClick={handleShare}
-                                className="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-colors"
+                                className="flex items-center gap-2 px-4 py-2 rounded-full bg-pink-500 text-white hover:bg-pink-600 transition-colors"
                                 aria-label="Compartilhar pacote"
                             >
                                 <FaShareAlt className='text-white' />
@@ -389,17 +389,17 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
                             </Link>
                         </div>
                         <div className="mt-8 border-t border-neutral-200 pt-4">
-                            <h3 className="text-lg font-semibold text-primary-800 mb-2 uppercase">Detalhes do Pacote:</h3>
+                            <h3 className="text-lg font-semibold text-pink-800 mb-2 uppercase">Detalhes do Pacote:</h3>
                             <div className="prose prose-sm sm:prose-base max-w-none text-neutral-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: richTextToHtml(pacote.description) }} />
                         </div>
                         <div className="mt-8 border-t border-neutral-200 pt-4">
-                            <h3 className="text-lg font-semibold text-primary-800 mb-2 uppercase">Nosso Pacote Inclui:</h3>
+                            <h3 className="text-lg font-semibold text-pink-800 mb-2 uppercase">Nosso Pacote Inclui:</h3>
                             <ul className="list-disc list-inside space-y-1 text-neutral-700">
                                 <li>Transporte em ônibus de turismo</li>
                                 <li>Hospedagem com café da manhã</li>
-                                <li>Guia acompanhante Romaria Fluvial Muiraquitã</li>
+                                <li>Guia acompanhante Nina Trajes</li>
                             </ul>
-                            <h3 className="text-lg font-semibold text-primary-800 mt-6 mb-2 uppercase">Informações Importantes:</h3>
+                            <h3 className="text-lg font-semibold text-pink-800 mt-6 mb-2 uppercase">Informações Importantes:</h3>
                             <ul className="list-disc list-inside space-y-1 text-neutral-700">
                                 <li>Este roteiro não inclui ingressos para atrações, despesas extras, refeições não mencionadas ou quaisquer outros itens de caráter pessoal.</li>
                                 <li>A D’ Hages Turismo reserva-se o direito de alterar a ordem da programação e horários, caso necessário, para o bom andamento da excursão, sempre visando a melhor experiência para os passageiros.</li>
@@ -420,14 +420,14 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
                                 <li>Favor ler o contrato de prestação de serviços turísticos que rege a compra deste produto para todas as condições detalhadas.</li>
                             </ul>
 
-                            <h3 className="text-lg font-semibold text-primary-800 mt-6 mb-2 uppercase">Informações e Reservas:</h3>
+                            <h3 className="text-lg font-semibold text-pink-800 mt-6 mb-2 uppercase">Informações e Reservas:</h3>
                             <div className="text-sm text-neutral-700 space-y-1">
                                 <p><strong>D’ HAGES TURISMO</strong></p>
                                 <p>Trav. Mauriti, 479 (entre Rua Nova e Senador Lemos) - Belém – Pará – Brasil - CEP: 66083-000</p>
-                                <p>E-mail: <a href="mailto:dhagesturismo@gmail.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">dhagesturismo@gmail.com</a></p>
-                                <p><a href="https://www.facebook.com/dhagesturismo" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Facebook.com/dhagesturismo</a></p>
-                                <p>Instagram: <a href="https://www.instagram.com/dhages_turismo" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">@dhages_turismo</a></p>
-                                <p>Fones/WhatsApp: <a href="https://wa.me/559133485063" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">91 3348-5063</a> / <a href="https://wa.me/5591981149800" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">91 98114-9800</a></p>
+                                <p>E-mail: <a href="mailto:dhagesturismo@gmail.com" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:underline">dhagesturismo@gmail.com</a></p>
+                                <p><a href="https://www.facebook.com/dhagesturismo" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:underline">Facebook.com/dhagesturismo</a></p>
+                                <p>Instagram: <a href="https://www.instagram.com/dhages_turismo" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:underline">@dhages_turismo</a></p>
+                                <p>Fones/WhatsApp: <a href="https://wa.me/559133485063" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:underline">91 3348-5063</a> / <a href="https://wa.me/5591981149800" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:underline">91 98114-9800</a></p>
                             </div>
                         </div>
                     </div>

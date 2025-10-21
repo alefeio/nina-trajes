@@ -48,7 +48,7 @@ export const ModalHeaderFooter = ({
     };
 
     return (
-        <div className="w-full flex-shrink-0 flex items-start justify-between bg-primary-200 gap-4 text-white p-4 z-30">
+        <div className="w-full flex-shrink-0 flex items-start justify-between bg-pink-200 gap-4 text-white p-4 z-30">
             <div className="flex flex-col text-left">
                 <h3 className="font-semibold text-lg">Tecido: {productMark || 'Sem Marca'}</h3>
                 <p className="text-sm mt-1">Modelo: {productModel || 'Sem Modelo'}</p>
@@ -77,7 +77,7 @@ export const ModalHeaderFooter = ({
                 {canShare && (
                     <button
                         onClick={handleShare}
-                        className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg p-3 font-semibold text-sm transition-colors duration-300"
+                        className="inline-flex items-center justify-center bg-pink-600 hover:bg-pink-700 text-white rounded-full shadow-lg p-3 font-semibold text-sm transition-colors duration-300"
                         aria-label="Compartilhar"
                         disabled={isSharing}
                     >

@@ -1,5 +1,5 @@
 export const collections = {
-    blueDresses: {
+    pinkDresses: {
         title: "Vestidos Azuis",
         subtitle: "Tons que transmitem elegância e serenidade",
         description: (
@@ -12,7 +12,7 @@ export const collections = {
                 </p>
             </>
         ),
-        bgcolor: "bg-blue-500",
+        bgcolor: "bg-pink-500",
         buttonText: "Solicitar Catálogo de Vestidos Azuis",
         items: [
             { id: 1, img: "/images/dresses/azul1.jpg", productMark: "Zibeline", productModel: "Ombro só/Busto Drapeado", cor: "Azul" },

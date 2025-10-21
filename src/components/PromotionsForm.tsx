@@ -66,11 +66,11 @@ const PromotionsForm: React.FC = () => {
     };
 
     return (
-        <section className="bg-primary-100 py-16 px-4 sm:px-6 lg:px-8">
+        <section className="bg-pink-100 py-16 px-4 sm:px-6 lg:px-8">
             <div id="fique-por-dentro" className="mb-8">&nbsp;</div>
             <div className="max-w-5xl mx-auto text-center">
                 {/* Título e Parágrafo otimizados para SEO e persuasão */}
-                <h3 className="font-serif text-3xl md:text-4xl font-bold mb-4 text-primary-900 drop-shadow-md">
+                <h3 className="font-serif text-3xl md:text-4xl font-bold mb-4 text-pink-900  ">
                     Ofertas de Viagem Exclusivas, Direto no seu WhatsApp
                 </h3>
                 <p className="text-lg text-neutral-700 max-w-2xl mx-auto mb-8 px-4">
@@ -84,7 +84,7 @@ const PromotionsForm: React.FC = () => {
                         onChange={(e) => setName(e.target.value)}
                         placeholder="Nome"
                         required
-                        className="w-full xl:w-1/4 px-4 py-3 border bg-white border-primary-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary-500"
+                        className="w-full xl:w-1/4 px-4 py-3 border bg-white border-pink-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary-500"
                     />
                     <input
                         type="email"
@@ -92,7 +92,7 @@ const PromotionsForm: React.FC = () => {
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Email"
                         required
-                        className="w-full xl:w-1/4 px-4 py-3 border border-primary-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary-500"
+                        className="w-full xl:w-1/4 px-4 py-3 border border-pink-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary-500"
                     />
                     <input
                         type="text"
@@ -100,12 +100,12 @@ const PromotionsForm: React.FC = () => {
                         onChange={handlePhoneChange}
                         placeholder="WhatsApp"
                         required
-                        className="w-full xl:w-1/4 px-4 py-3 border border-primary-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary-500"
+                        className="w-full xl:w-1/4 px-4 py-3 border border-pink-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary-500"
                     />
                     <button
                         type="submit"
                         disabled={status === 'submitting'}
-                        className="mt-4 xl:mt-0 w-full xl:w-1/4 px-6 py-3 bg-secondary-400 hover:bg-secondary-500 text-primary-950 font-semibold rounded-md transition-colors duration-200 shadow-md"
+                        className="mt-4 xl:mt-0 w-full xl:w-1/4 px-6 py-3 bg-secondary-400 hover:bg-secondary-500 text-pink-950 font-semibold rounded-md transition-colors duration-200 shadow-md"
                     >
                         {status === 'submitting' ? 'Cadastrando...' : 'Cadastrar'}
                     </button>

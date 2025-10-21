@@ -90,7 +90,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                   href="/admin"
                   className="text-gray-900 dark:text-white flex items-center p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 group"
                 >
-                  <MdDashboard className="mr-3 text-xl text-gray-500 group-hover:text-blue-500 transition-colors" />
+                  <MdDashboard className="mr-3 text-xl text-gray-500 group-hover:text-pink-500 transition-colors" />
                   <span className="text-sm font-medium">Dashboard</span>
                 </Link>
               </li>
@@ -99,7 +99,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                   href="/admin/menu"
                   className="text-gray-900 dark:text-white flex items-center p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 group"
                 >
-                  <MdMenu className="mr-3 text-xl text-gray-500 group-hover:text-blue-500 transition-colors" />
+                  <MdMenu className="mr-3 text-xl text-gray-500 group-hover:text-pink-500 transition-colors" />
                   <span className="text-sm font-medium">Menu</span>
                 </Link>
               </li>
@@ -108,7 +108,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                   href="/admin/banner"
                   className="text-gray-900 dark:text-white flex items-center p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 group"
                 >
-                  <MdViewCarousel className="mr-3 text-xl text-gray-500 group-hover:text-blue-500 transition-colors" />
+                  <MdViewCarousel className="mr-3 text-xl text-gray-500 group-hover:text-pink-500 transition-colors" />
                   <span className="text-sm font-medium">Banner</span>
                 </Link>
               </li>
@@ -117,7 +117,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                   href="/admin/gallery"
                   className="text-gray-900 dark:text-white flex items-center p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 group"
                 >
-                  <MdViewCarousel className="mr-3 text-xl text-gray-500 group-hover:text-blue-500 transition-colors" />
+                  <MdViewCarousel className="mr-3 text-xl text-gray-500 group-hover:text-pink-500 transition-colors" />
                   <span className="text-sm font-medium">Galeria de Fotos</span>
                 </Link>
               </li>
@@ -126,7 +126,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                   href="/admin/homepage"
                   className="text-gray-900 dark:text-white flex items-center p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 group"
                 >
-                  <MdPhotoLibrary className="mr-3 text-xl text-gray-500 group-hover:text-blue-500 transition-colors" />
+                  <MdPhotoLibrary className="mr-3 text-xl text-gray-500 group-hover:text-pink-500 transition-colors" />
                   <span className="text-sm font-medium">Homepage</span>
                 </Link>
               </li> */}
@@ -135,7 +135,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                   href="/admin/testimonials"
                   className="text-gray-900 dark:text-white flex items-center p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 group"
                 >
-                  <MdReviews className="mr-3 text-xl text-gray-500 group-hover:text-blue-500 transition-colors" />
+                  <MdReviews className="mr-3 text-xl text-gray-500 group-hover:text-pink-500 transition-colors" />
                   <span className="text-sm font-medium">Depoimentos</span>
                 </Link>
               </li>
@@ -144,7 +144,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                   href="/admin/faq"
                   className="text-gray-900 dark:text-white flex items-center p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 group"
                 >
-                  <MdHelpOutline className="mr-3 text-xl text-gray-500 group-hover:text-blue-500 transition-colors" />
+                  <MdHelpOutline className="mr-3 text-xl text-gray-500 group-hover:text-pink-500 transition-colors" />
                   <span className="text-sm font-medium">FAQ</span>
                 </Link>
               </li>
@@ -162,7 +162,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                   href="/admin/pacotes"
                   className="text-gray-900 dark:text-white flex items-center p-3 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 group"
                 >
-                  <MdPalette className="mr-3 text-xl text-gray-500 group-hover:text-blue-500 transition-colors" />
+                  <MdPalette className="mr-3 text-xl text-gray-500 group-hover:text-pink-500 transition-colors" />
                   <span className="text-sm font-medium">Pacotes</span>
                 </Link>
               </li>

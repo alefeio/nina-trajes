@@ -14,10 +14,10 @@ export default function FAQ({ faqs }: FAQPageProps) {
 
   return (
     <>
-      <section className="mx-auto w-full px-4 py-32 bg-white">
+      <section className="mx-auto w-full px-4 py-32 bg-pink-100">
         <div id="faq">&nbsp;</div>
         <div className="mb-12 text-center">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 leading-tight text-primary-900 drop-shadow-md">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 leading-tight text-pink-900">
             Perguntas Frequentes
           </h2>
           <p className="text-lg text-neutral-700 max-w-2xl mx-auto">
@@ -27,7 +27,7 @@ export default function FAQ({ faqs }: FAQPageProps) {
 
         <div className="max-w-5xl mx-auto">
           {faqs.map((faq, idx) => (
-            <div key={faq.id} className="mb-4 border-b border-background-1000/20 bg-primary-100 px-4 rounded-xl">
+            <div key={faq.id} className="mb-4 border-b border-background-1000/20 bg-pink-200 px-4 rounded-xl">
               <button
                 className="w-full flex justify-between items-center py-4 text-left font-semibold text-lg focus:outline-none"
                 onClick={() => setOpen(open === idx ? null : idx)}

@@ -165,7 +165,7 @@ export default function MenuForm() {
                 <input
                     type="file"
                     onChange={handleLogoChange}
-                    className="w-full text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+                    className="w-full text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md py-2 px-3 focus:outline-none focus:border-pink-500"
                 />
                 {logoUrl && (
                     <div className="mt-4">
@@ -212,14 +212,14 @@ export default function MenuForm() {
                                     type="checkbox"
                                     checked={newLinkTarget}
                                     onChange={(e) => setNewLinkTarget(e.target.checked)}
-                                    className="mr-2 rounded-sm text-blue-600 focus:ring-blue-500"
+                                    className="mr-2 rounded-sm text-pink-600 focus:ring-pink-500"
                                 />
                                 Abrir em nova aba?
                             </label>
                         </div>
                         <button
                             type="submit"
-                            className="w-full bg-blue-600 dark:bg-blue-700 text-white p-2 rounded-md hover:bg-blue-700 dark:hover:bg-blue-800 transition-colors"
+                            className="w-full bg-pink-600 dark:bg-pink-700 text-white p-2 rounded-md hover:bg-pink-700 dark:hover:bg-pink-800 transition-colors"
                         >
                             {editingLinkId ? "Atualizar Link" : "Adicionar Link"}
                         </button>
@@ -251,7 +251,7 @@ export default function MenuForm() {
                                     <button
                                         type="button"
                                         onClick={() => handleEditLink(link)}
-                                        className="p-2 text-blue-500 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900 rounded-full transition-colors"
+                                        className="p-2 text-pink-500 dark:text-pink-400 hover:bg-pink-100 dark:hover:bg-pink-900 rounded-full transition-colors"
                                         aria-label={`Editar link ${link.text}`}
                                     >
                                         <FaEdit />

@@ -23,7 +23,7 @@ export default function Testimonials({ testimonials }: TestimonialsPageProps) {
       <section className="mx-auto w-full px-4 py-32">
         <div id="depoimentos">&nbsp;</div>
         <div className="mb-12 text-center">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 leading-tight text-primary-900 drop-shadow-md">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 leading-tight text-pink-900  ">
             O que nossos clientes dizem
           </h2>
           <p className="text-lg text-neutral-700 max-w-2xl mx-auto">
@@ -72,7 +72,7 @@ export default function Testimonials({ testimonials }: TestimonialsPageProps) {
             {testimonials.map((t) => (
               <article
                 key={t.id}
-                className="w-full md:max-w-[400px] lg:min-w-[30%] snap-center bg-primary-100 rounded-xl shadow-lg p-6 flex-shrink-0 flex flex-col justify-between min-h-[400px]"
+                className="w-full md:max-w-[400px] lg:min-w-[30%] snap-center bg-pink-100 rounded-xl shadow-lg p-6 flex-shrink-0 flex flex-col justify-between min-h-[400px]"
                 aria-label={`Depoimento de ${t.name}`}
               >
                 {t.type === 'texto' && (

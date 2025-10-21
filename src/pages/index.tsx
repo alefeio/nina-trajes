@@ -121,32 +121,42 @@ export default function Home({ banners, menu, testimonials, faqs, destinos, gall
         };
     }, []);
 
+    // **ATUALIZADO:** Referência de imagem genérica para OG/Twitter.
     const defaultOgImage = banners.length > 0 && banners[0].banners[0].url
         ? banners[0].banners[0].url
-        : 'https://seusite.com/default-og-image.jpg';
+        : 'https://seusite.com/default-og-image-vestidos.jpg'; // Sugestão de alteração
 
-    const defaultOgImageAlt = "Romaria Fluvial Muiraquitã - Sua agência de viagens em Belém";
+    // **ATUALIZADO:** Descrição alternativa para a imagem.
+    const defaultOgImageAlt = "Nina Trajes - Aluguel de Vestidos de Festa em Belém e Barcarena";
 
     return (
         <>
             <Head>
-                <title>Romaria Fluvial Muiraquitã | Agência de Viagens em Belém - Pacotes e Destinos</title>
+                {/* 1. TITLE OTIMIZADO */}
+                <title>Nina Trajes: Aluguel de Vestidos Delivery em Belém e Barcarena | Experimente em Casa</title>
+                
+                {/* 2. META DESCRIPTION OTIMIZADA */}
                 <meta
                     name="description"
-                    content="Descubra os melhores pacotes de viagens e destinos com a Romaria Fluvial Muiraquitã em Belém. Aventuras memoráveis, atendimento personalizado e as melhores ofertas para sua próxima viagem. Viaje com a Romaria Fluvial Muiraquitã para Salinas, Lençóis Maranhenses, Carolina-MA, São Luís, Fortaleza, Jericoacoara, Marajó, Ajuruteua, Algodoal, Nordeste e muito mais!"
+                    content="Elegância e praticidade: alugue o vestido perfeito para festas, formaturas e casamentos. Levamos os modelos até sua casa em Belém para experimentar. Atendemos Belém e Barcarena."
                 />
+                
+                {/* 3. KEYWORDS OTIMIZADAS */}
                 <meta
                     name="keywords"
-                    content="Romaria Fluvial Muiraquitã, viagens, pacotes de viagens, Belém, Pará, destinos turísticos, agência de viagens, excursões, aventura, turismo, agência turismo Belém, agencia turismo belem, agencia de viagens belem, agencia de viagens em belem, agencia de turismo em belem, pacotes de viagens belem, pacotes de viagens em belem, destinos turísticos belem, destinos turísticos em belem"
+                    content="aluguel de vestidos, vestidos de festa, vestidos para formatura, vestidos para casamento, aluguel de trajes Belém, aluguel de vestidos Barcarena, vestidos delivery Belém, experimentar vestido em casa, Nina Trajes"
                 />
+                
                 <link rel="canonical" href="https://seusite.com/" />
                 <meta name="robots" content="index, follow" />
                 <meta property="og:locale" content="pt_BR" />
-                <meta property="og:site_name" content="Romaria Fluvial Muiraquitã" />
-                <meta property="og:title" content="Romaria Fluvial Muiraquitã | Agência de Viagens em Belém - Pacotes e Destinos" />
+                <meta property="og:site_name" content="Nina Trajes" />
+                
+                {/* 4. OPEN GRAPH (Facebook/WhatsApp/etc) OTIMIZADO */}
+                <meta property="og:title" content="Nina Trajes: Aluguel de Vestidos Delivery em Belém e Barcarena" />
                 <meta
                     property="og:description"
-                    content="Descubra os melhores pacotes de viagens e destinos com a Romaria Fluvial Muiraquitã em Belém. Aventuras memoráveis, atendimento personalizado e as melhores ofertas para sua próxima viagem."
+                    content="Na Nina Trajes, alugue vestidos de festa com praticidade e estilo! Levamos modelos para você experimentar em casa (Belém). Atendemos também Barcarena."
                 />
                 <meta property="og:url" content="https://seusite.com/" />
                 <meta property="og:type" content="website" />
@@ -154,23 +164,36 @@ export default function Home({ banners, menu, testimonials, faqs, destinos, gall
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
                 <meta property="og:image:alt" content={defaultOgImageAlt} />
+                
+                {/* 5. TWITTER CARD OTIMIZADO */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Romaria Fluvial Muiraquitã | Agência de Viagens em Belém - Pacotes e Destinos" />
+                <meta name="twitter:title" content="Nina Trajes: Aluguel de Vestidos Delivery em Belém e Barcarena" />
                 <meta
                     property="twitter:description"
-                    content="Descubra os melhores pacotes de viagens e destinos com a Romaria Fluvial Muiraquitã em Belém. Aventuras memoráveis, atendimento personalizado e as melhores ofertas para sua próxima viagem."
+                    content="Na Nina Trajes, alugue vestidos de festa com praticidade e estilo! Levamos modelos para você experimentar em casa (Belém). Atendemos também Barcarena."
                 />
                 <meta name="twitter:image" content={defaultOgImage} />
                 <meta name="twitter:image:alt" content={defaultOgImageAlt} />
+                
+                {/* 6. SCHEMA.ORG JSON-LD (Alterado de TravelAgency para LocalBusiness) */}
                 <script type="application/ld+json">
                     {`
                     {
                       "@context": "https://schema.org",
-                      "@type": "TravelAgency",
-                      "name": "Romaria Fluvial Muiraquitã",
+                      "@type": "LocalBusiness",
+                      "name": "Nina Trajes - Aluguel de Vestidos Delivery",
                       "url": "https://seusite.com/",
-                      "logo": "https://seusite.com/images/logo-dhages.png",
-                      "description": "Sua agência de viagens em Belém, Pará. Especializada em pacotes turísticos e destinos memoráveis.",
+                      "logo": "https://seusite.com/images/logo-nina-trajes.png",
+                      "description": "Loja de aluguel de vestidos de festa, formatura e casamento com atendimento delivery em Belém e Barcarena. Experimente em casa!",
+                      "areaServed": [
+                        { "@type": "City", "name": "Belém" },
+                        { "@type": "City", "name": "Barcarena" }
+                      ],
+                      "makesOffer": {
+                        "@type": "Offer",
+                        "name": "Aluguel de Vestidos de Festa e Formatura",
+                        "priceCurrency": "BRL"
+                      },
                       "address": {
                         "@type": "PostalAddress",
                         "streetAddress": "Av. Senador Lemos, 3153, lojas 30/31 - 1º piso, It Center - Sacramenta",
@@ -182,11 +205,11 @@ export default function Home({ banners, menu, testimonials, faqs, destinos, gall
                       "contactPoint": {
                         "@type": "ContactPoint",
                         "telephone": "+559133485063",
-                        "contactType": "Sales"
+                        "contactType": "Vendas e Aluguel"
                       },
                       "sameAs": [
-                        "https://facebook.com/dhagesturismo",
-                        "https://www.instagram.com/dhages_turismo"
+                        "https://facebook.com/nina.trajes", // Substitua pelos links reais da Nina Trajes
+                        "https://www.instagram.com/nina.trajes" // Substitua pelos links reais da Nina Trajes
                       ]
                     }
                     `}
@@ -198,15 +221,15 @@ export default function Home({ banners, menu, testimonials, faqs, destinos, gall
                 <MenuComponent menuData={menu} />
                 <HeroSlider banners={banners} />
                 <main className="max-w-full mx-auto">
-                    <Hero />
+                    {/* <Hero /> */}
                     <PacotesGallery destinos={destinos} />
                     {/* Renderiza um componente GalleryPhotos para cada galeria */}
                     {galleries?.map((gallery) => (
                         <GalleryPhotos key={gallery.id} gallery={gallery} />
                     ))}
                     <Header />
-                    <PromotionsForm />
-                    <Testimonials testimonials={testimonials} />
+                    {/* <PromotionsForm /> */}
+                    {/* <Testimonials testimonials={testimonials} /> */}
                     <FAQ faqs={faqs} />
                     <Footer menuData={menu} />
                 </main>

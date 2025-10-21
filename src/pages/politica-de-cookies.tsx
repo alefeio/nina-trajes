@@ -55,12 +55,12 @@ export const getServerSideProps: GetServerSideProps<PoliticaDeCookiesProps> = as
 // O componente agora recebe os dados do menu como uma prop
 const PoliticaDeCookies = ({ menuData }: PoliticaDeCookiesProps) => {
   // Dados específicos para SEO desta página
-  const pageTitle = "Política de Cookies | Romaria Fluvial Muiraquitã";
-  const pageDescription = "Conheça a política de cookies da Romaria Fluvial Muiraquitã. Entenda como utilizamos cookies para melhorar sua experiência de navegação e proteger seus dados.";
-  const pageKeywords = "política de cookies, cookies, privacidade, Romaria Fluvial Muiraquitã, dados, navegação, site, LGPD";
+  const pageTitle = "Política de Cookies | Nina Trajes";
+  const pageDescription = "Conheça a política de cookies da Nina Trajes. Entenda como utilizamos cookies para melhorar sua experiência de navegação e proteger seus dados.";
+  const pageKeywords = "política de cookies, cookies, privacidade, Nina Trajes, dados, navegação, site, LGPD";
   const pageUrl = "https://seusite.com/politica-de-cookies"; // **MUITO IMPORTANTE: Substitua pela URL REAL desta página**
   const ogImage = "https://seusite.com/images/og-image-politica-cookies.jpg"; // **Crie uma imagem específica ou use uma padrão**
-  const ogImageAlt = "Ilustração da Política de Cookies da Romaria Fluvial Muiraquitã";
+  const ogImageAlt = "Ilustração da Política de Cookies da Nina Trajes";
 
 
   return (
@@ -83,7 +83,7 @@ const PoliticaDeCookies = ({ menuData }: PoliticaDeCookiesProps) => {
 
         {/* Open Graph Tags */}
         <meta property="og:locale" content="pt_BR" />
-        <meta property="og:site_name" content="Romaria Fluvial Muiraquitã" />
+        <meta property="og:site_name" content="Nina Trajes" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:url" content={pageUrl} />
@@ -111,7 +111,7 @@ const PoliticaDeCookies = ({ menuData }: PoliticaDeCookiesProps) => {
               "url": "${pageUrl}",
               "publisher": {
                 "@type": "Organization",
-                "name": "Romaria Fluvial Muiraquitã",
+                "name": "Nina Trajes",
                 "logo": {
                   "@type": "ImageObject",
                   "url": "https://seusite.com/images/logo-dhages.png" // Substitua pela URL do seu logo
@@ -123,23 +123,23 @@ const PoliticaDeCookies = ({ menuData }: PoliticaDeCookiesProps) => {
       </Head>
 
       <div className="container mx-auto px-4 py-8 max-w-3xl">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center text-primary-800">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-6 text-center text-pink-800">
           Política de Cookies
         </h1>
 
         <p className="mb-8 text-center text-neutral-600">
-          Esta página descreve como a Romaria Fluvial Muiraquitã utiliza cookies em nosso site.
+          Esta página descreve como a Nina Trajes utiliza cookies em nosso site.
         </p>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-primary-700">1. O que são Cookies?</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-pink-700">1. O que são Cookies?</h2>
           <p className="mb-4 text-neutral-700">
             Cookies são pequenos arquivos de texto que são armazenados em seu computador ou dispositivo móvel quando você visita um site. Eles permitem que o site "lembre" suas ações e preferências (como login, idioma, tamanho da fonte e outras preferências de exibição) ao longo de um período, para que você não precise redigitá-las sempre que voltar ao site ou navegar de uma página para outra.
           </p>
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-primary-700">2. Como a Romaria Fluvial Muiraquitã Usa os Cookies</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-pink-700">2. Como a Nina Trajes Usa os Cookies</h2>
           <p className="mb-4 text-neutral-700">
             Utilizamos cookies para diversas finalidades em nosso site, visando melhorar sua experiência de navegação e entender como nossos serviços são utilizados:
           </p>
@@ -160,7 +160,7 @@ const PoliticaDeCookies = ({ menuData }: PoliticaDeCookiesProps) => {
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-primary-700">3. Gerenciando suas Preferências de Cookies</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-pink-700">3. Gerenciando suas Preferências de Cookies</h2>
           <p className="mb-4 text-neutral-700">
             Você tem total controle sobre suas preferências de cookies e pode decidir se aceita ou rejeita-os. A maioria dos navegadores web aceita cookies automaticamente, mas você geralmente pode modificar a configuração do seu navegador para recusar cookies, se preferir. No entanto, desabilitar cookies pode afetar a funcionalidade de nosso site e de muitos outros sites que você visita.
           </p>
@@ -168,15 +168,15 @@ const PoliticaDeCookies = ({ menuData }: PoliticaDeCookiesProps) => {
             Para mais informações sobre como controlar e excluir cookies no seu navegador, visite as páginas de ajuda dos navegadores mais populares:
           </p>
           <ul className="list-disc list-inside mt-4 space-y-2 text-neutral-700">
-            <li><a href="https://support.google.com/chrome/answer/95647?hl=pt" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Google Chrome</a></li>
-            <li><a href="https://support.mozilla.org/pt-BR/kb/cookies-informacoes-que-sites-armazenam-no-seu-computador" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Mozilla Firefox</a></li>
-            <li><a href="https://support.microsoft.com/pt-br/microsoft-edge/excluir-cookies-no-microsoft-edge-63947406-40ac-c3b8-5791-ad5d1764baec" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Microsoft Edge</a></li>
-            <li><a href="https://support.apple.com/pt-br/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Safari</a></li>
+            <li><a href="https://support.google.com/chrome/answer/95647?hl=pt" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:underline">Google Chrome</a></li>
+            <li><a href="https://support.mozilla.org/pt-BR/kb/cookies-informacoes-que-sites-armazenam-no-seu-computador" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:underline">Mozilla Firefox</a></li>
+            <li><a href="https://support.microsoft.com/pt-br/microsoft-edge/excluir-cookies-no-microsoft-edge-63947406-40ac-c3b8-5791-ad5d1764baec" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:underline">Microsoft Edge</a></li>
+            <li><a href="https://support.apple.com/pt-br/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:underline">Safari</a></li>
           </ul>
         </section>
 
         <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-primary-700">4. Mais Informações</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-pink-700">4. Mais Informações</h2>
           <p className="text-neutral-700">
             Esta Política de Cookies pode ser atualizada periodicamente. Recomendamos que você a revise regularmente para se manter informado sobre como estamos utilizando os cookies.
           </p>
@@ -185,7 +185,7 @@ const PoliticaDeCookies = ({ menuData }: PoliticaDeCookiesProps) => {
           </p>
           <p className="mt-4">
             <Link href="/" className="text-secondary-500 hover:underline font-semibold">
-              Voltar para a página inicial da Romaria Fluvial Muiraquitã
+              Voltar para a página inicial da Nina Trajes
             </Link>
           </p>
         </section>

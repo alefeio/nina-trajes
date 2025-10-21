@@ -30,7 +30,7 @@ const FloatingButtons: React.FC<FloatingButtonsProps> = ({ destinos }) => {
                     <a
                         key={destino.id}
                         href={`#${destino.slug}`}
-                        className={`${showButtons ? 'opacity-100 visible' : 'opacity-0 invisible'} flex bg-blue-500 items-center justify-center p-2 rounded-full shadow-lg hover:opacity-80 transition-opacity duration-300`}
+                        className={`${showButtons ? 'opacity-100 visible' : 'opacity-0 invisible'} flex bg-pink-500 items-center justify-center p-2 rounded-full shadow-lg hover:opacity-80 transition-opacity duration-300`}
                         title={destino.title}
                     >
                         <span className="font-bold text-sm text-white">{destino.title}</span>

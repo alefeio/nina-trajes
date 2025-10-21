@@ -51,7 +51,7 @@ export const DynamicSection: React.FC<DynamicSectionProps> = ({ content }) => {
             </p>
             {content.buttonUrl && content.buttonText && (
               <Link href={content.buttonUrl} legacyBehavior>
-                <a className="inline-block bg-primary-500 text-white font-bold py-3 px-8 rounded-full hover:bg-primary-600 transition-colors">
+                <a className="inline-block bg-pink-500 text-white font-bold py-3 px-8 rounded-full hover:bg-pink-600 transition-colors">
                   {content.buttonText}
                 </a>
               </Link>

@@ -62,7 +62,7 @@ export default function GalleryPhotos({ gallery }: GalleryPhotosProps) {
         <>
             <section id="gallery" className="mx-auto w-full px-4 py-32">
                 <div className="mb-8 text-center">
-                    <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 leading-tight text-primary-900 drop-shadow-md">
+                    <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 leading-tight text-pink-900">
                         Galeria de Fotos
                     </h2>
                     <p className="text-lg text-neutral-700 max-w-2xl mx-auto">

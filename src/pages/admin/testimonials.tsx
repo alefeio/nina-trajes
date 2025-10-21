@@ -150,7 +150,7 @@ export default function Testimonials() {
                             id="name"
                             value={form.name}
                             onChange={(e) => setForm({ ...form, name: e.target.value })}
-                            className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring focus:ring-blue-500"
+                            className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring focus:ring-pink-500"
                             required
                         />
                     </div>
@@ -164,7 +164,7 @@ export default function Testimonials() {
                                 setForm({ ...form, type: e.target.value as 'texto' | 'foto' | 'video', content: '' });
                                 setFile(null);
                             }}
-                            className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring focus:ring-blue-500"
+                            className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring focus:ring-pink-500"
                         >
                             <option value="texto">Texto</option>
                             <option value="foto">Foto</option>
@@ -182,7 +182,7 @@ export default function Testimonials() {
                                 value={form.content}
                                 onChange={(e) => setForm({ ...form, content: e.target.value })}
                                 rows={4}
-                                className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring focus:ring-blue-500"
+                                className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring focus:ring-pink-500"
                                 required
                             ></textarea>
                         ) : (
@@ -227,7 +227,7 @@ export default function Testimonials() {
                                 {testimonial.type === 'texto' ? (
                                     <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">{testimonial.content}</p>
                                 ) : (
-                                    <a href={testimonial.content} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline text-sm mt-1">
+                                    <a href={testimonial.content} target="_blank" rel="noopener noreferrer" className="text-pink-500 hover:underline text-sm mt-1">
                                         Visualizar {testimonial.type}
                                     </a>
                                 )}
@@ -235,7 +235,7 @@ export default function Testimonials() {
                             <div className="flex space-x-2">
                                 <button
                                     onClick={() => setEditing(testimonial)}
-                                    className="bg-blue-600 dark:bg-blue-700 text-white p-2 rounded-full hover:bg-blue-700 dark:hover:bg-blue-800 transition"
+                                    className="bg-pink-600 dark:bg-pink-700 text-white p-2 rounded-full hover:bg-pink-700 dark:hover:bg-pink-800 transition"
                                     title="Editar"
                                 >
                                     <FaEdit size={16} />

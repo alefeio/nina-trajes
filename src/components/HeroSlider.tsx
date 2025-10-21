@@ -75,7 +75,7 @@ export default function HeroSlider({ banners }: HeroSliderProps) {
 
   return (
     <div
-      className="relative w-full h-[70vh] md:h-[60vh] lg:h-[70vh] overflow-hidden shadow-2xl" // Sombra mais forte
+      className="relative w-full h-[30vh] md:h-[50vh] lg:h-[50vh] overflow-hidden shadow-2xl" // Sombra mais forte
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onTouchStart={handleTouchStart}
@@ -100,7 +100,7 @@ export default function HeroSlider({ banners }: HeroSliderProps) {
             {/* Título e Subtítulo */}
             <div className="flex-1 mb-8">
               {slides[current].title && (
-                <h2 className="font-sans text-4xl md:text-5xl lg:text-7xl font-extrabold text-white drop-shadow-lg mb-4 leading-tight"> {/* Título maior e mais impactante */}
+                <h2 className="font-sans text-4xl md:text-5xl lg:text-7xl font-extrabold text-white   mb-4 leading-tight"> {/* Título maior e mais impactante */}
                   {slides[current].title}
                 </h2>
               )}

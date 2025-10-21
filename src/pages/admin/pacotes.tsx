@@ -886,7 +886,7 @@ export default function AdminDestinos() {
 
                             )}
 
-                            <input type="file" name="image" onChange={handleImageChange} className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
+                            <input type="file" name="image" onChange={handleImageChange} className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-pink-50 file:text-pink-700 hover:file:bg-pink-100" />
 
                         </div>
 
@@ -970,7 +970,7 @@ export default function AdminDestinos() {
 
                                                 <input type="text" name="caption" value={foto.caption} onChange={(e) => handleFotoChange(e, pacoteIndex, fotoIndex)} placeholder="Legenda da foto" className="flex-1 p-2 dark:bg-gray-600 dark:text-gray-200 border rounded-lg" />
 
-                                                <label htmlFor={`foto-${pacoteIndex}-${fotoIndex}`} className="cursor-pointer text-blue-500 hover:text-blue-700">
+                                                <label htmlFor={`foto-${pacoteIndex}-${fotoIndex}`} className="cursor-pointer text-pink-500 hover:text-pink-700">
 
                                                     <MdAddPhotoAlternate size={24} />
 
@@ -982,7 +982,7 @@ export default function AdminDestinos() {
 
                                         ))}
 
-                                        <button type="button" onClick={() => handleAddFoto(pacoteIndex)} className="mt-2 text-blue-500 flex items-center gap-1 hover:text-blue-700">
+                                        <button type="button" onClick={() => handleAddFoto(pacoteIndex)} className="mt-2 text-pink-500 flex items-center gap-1 hover:text-pink-700">
 
                                             <MdAdd size={20} /> Adicionar Foto
 
@@ -1005,7 +1005,7 @@ export default function AdminDestinos() {
 
                         <div className="flex flex-col sm:flex-row gap-4 mt-6">
 
-                            <button type="submit" disabled={loading} className="bg-blue-600 text-white p-4 rounded-lg flex-1 font-bold shadow-md hover:bg-blue-700 transition duration-200 disabled:bg-gray-400">
+                            <button type="submit" disabled={loading} className="bg-pink-600 text-white p-4 rounded-lg flex-1 font-bold shadow-md hover:bg-pink-700 transition duration-200 disabled:bg-gray-400">
 
                                 {loading ? (form.id ? "Atualizando..." : "Salvando...") : (form.id ? "Atualizar Destino" : "Salvar Destino")}
 
@@ -1065,7 +1065,7 @@ export default function AdminDestinos() {
 
                                     <div className="flex gap-2 mt-4 md:mt-0">
 
-                                        <button onClick={(e) => { e.stopPropagation(); handleEdit(destino); }} className="bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-600 transition duration-200">
+                                        <button onClick={(e) => { e.stopPropagation(); handleEdit(destino); }} className="bg-pink-600 text-white p-2 rounded-lg hover:bg-pink-600 transition duration-200">
 
                                             <MdEdit size={20} className="text-white" />
 

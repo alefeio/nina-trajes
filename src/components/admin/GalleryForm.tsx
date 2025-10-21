@@ -215,7 +215,7 @@ export default function GalleryForm() {
                         type="text"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
-                        className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                        className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
                         placeholder="Ex: Viagem à praia"
                         required
                     />
@@ -226,7 +226,7 @@ export default function GalleryForm() {
                         type="text"
                         value={slug}
                         onChange={(e) => setSlug(e.target.value)}
-                        className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                        className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
                         placeholder="ex: viagem-a-praia"
                         required
                     />
@@ -287,7 +287,7 @@ export default function GalleryForm() {
                                                 type="text"
                                                 value={newPhotoAltTexts[index]}
                                                 onChange={(e) => handleAltTextChange(e, index)}
-                                                className="w-full p-1 mt-1 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:border-blue-500 text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                                                className="w-full p-1 mt-1 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:border-pink-500 text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                                                 placeholder="Texto alternativo"
                                             />
                                         </div>
@@ -321,7 +321,7 @@ export default function GalleryForm() {
 
             <button
                 type="submit"
-                className={`w-full p-3 text-white font-bold rounded-md ${loading ? "bg-gray-400 dark:bg-gray-600 cursor-not-allowed" : "bg-blue-600 dark:bg-blue-700 hover:bg-blue-700 dark:hover:bg-blue-800"}`}
+                className={`w-full p-3 text-white font-bold rounded-md ${loading ? "bg-gray-400 dark:bg-gray-600 cursor-not-allowed" : "bg-pink-600 dark:bg-pink-700 hover:bg-pink-700 dark:hover:bg-pink-800"}`}
                 disabled={loading}
             >
                 {loading ? "Salvando..." : editingGalleryId ? "Atualizar Galeria" : "Adicionar Galeria"}

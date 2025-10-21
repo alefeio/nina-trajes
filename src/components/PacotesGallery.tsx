@@ -77,19 +77,18 @@ export default function PacotesGallery({ destinos }: PacotesGalleryProps) {
 
     return (
         <>
-            <section className="bg-blue-100 py-32">
-                <div id="destinos">&nbsp;</div>
-                <div className="text-center md:max-w-7xl mx-auto mb-16">
-                    <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 leading-tight text-primary-900 drop-shadow-md">
-                        Explore Nossos Destinos
+            <section className="bg-pink-100 py-48">
+                <div className="text-center md:max-w-7xl mx-auto mb-40">
+                    <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6 leading-tight text-pink-900  ">
+                        Bem-vinda à Nina Trajes ✨
                     </h2>
-                    <p className="text-neutral-700 max-w-2xl mx-auto text-lg px-4">
-                        Pacotes de viagem completos e experiências inesquecíveis, para que você possa focar apenas em aproveitar.
+                    <p className="text-neutral-700 max-w-7xl mx-auto text-lg px-4">
+                        Na Nina Trajes, acreditamos que cada mulher merece sentir-se única em seus momentos especiais — com praticidade, conforto e muito estilo.
                     </p>
                 </div>
-                <div className="block sticky top-24 md:top-32 transform -translate-y-1/2 z-20">
+                {/* <div className="block sticky top-24 md:top-32 transform -translate-y-1/2 z-20">
                     <FloatingButtons destinos={destinos} />
-                </div>
+                </div> */}
 
                 {destinos.map((destino: Destino) => (
                     <div key={destino.slug} id={destino.slug}>
