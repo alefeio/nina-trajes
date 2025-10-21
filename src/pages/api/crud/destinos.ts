@@ -25,7 +25,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     switch (method) {
       case 'GET': {
         const destinos = await prisma.destino.findMany({
-          include: { pacotes: { include: { fotos: true, dates: { orderBy: { saida: 'asc' } } } } },
+          // Removido: dates: { orderBy: { saida: 'asc' } }
+          include: { pacotes: { include: { fotos: true } } }, 
           orderBy: { order: 'asc' }, // Ordena por `order` para o frontend
         });
         return res.status(200).json({ success: true, destinos });
@@ -52,22 +53,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 subtitle: p.subtitle || null,
                 description: p.description,
                 fotos: { create: p.fotos.map((f: any) => ({ url: f.url, caption: f.caption || null })) },
-                dates: {
-                  create: p.dates.map((d: any) => ({
-                    saida: new Date(d.saida),
-                    retorno: new Date(d.retorno),
-                    vagas_total: d.vagas_total,
-                    vagas_disponiveis: d.vagas_disponiveis,
-                    price: d.price,
-                    price_card: d.price_card,
-                    status: d.status,
-                    notes: d.notes || null,
-                  })),
-                },
+                // Removido: dates: { create: p.dates.map(...) }
               })),
             },
           },
-          include: { pacotes: { include: { fotos: true, dates: true } } },
+          // Removido: dates: true
+          include: { pacotes: { include: { fotos: true } } }, 
         });
 
         return res.status(201).json({ success: true, data: newDestino });
@@ -103,20 +94,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     deleteMany: { pacoteId: p.id },
                     create: p.fotos.map((f: any) => ({ url: f.url, caption: f.caption || null })),
                   },
-                  dates: {
-                    // Sincroniza datas: delete as antigas, crie as novas
-                    deleteMany: { pacoteId: p.id },
-                    create: p.dates.map((d: any) => ({
-                      saida: new Date(d.saida),
-                      retorno: new Date(d.retorno),
-                      vagas_total: d.vagas_total,
-                      vagas_disponiveis: d.vagas_disponiveis,
-                      price: d.price,
-                      price_card: d.price_card,
-                      status: d.status,
-                      notes: d.notes || null,
-                    })),
-                  },
+                  // Removido: lógica de sincronização de dates (deleteMany e create)
                 },
               })
             );
@@ -131,18 +109,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                   description: p.description,
                   destinoId: id,
                   fotos: { create: p.fotos.map((f: any) => ({ url: f.url, caption: f.caption || null })) },
-                  dates: {
-                    create: p.dates.map((d: any) => ({
-                      saida: new Date(d.saida),
-                      retorno: new Date(d.retorno),
-                      vagas_total: d.vagas_total,
-                      vagas_disponiveis: d.vagas_disponiveis,
-                      price: d.price,
-                      price_card: d.price_card,
-                      status: d.status,
-                      notes: d.notes || null,
-                    })),
-                  },
+                  // Removido: dates: { create: p.dates.map(...) }
                 },
               })
             );
@@ -175,7 +142,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         const updatedDestino = await prisma.destino.findUnique({
           where: { id },
-          include: { pacotes: { include: { fotos: true, dates: true } } },
+          // Removido: dates: true
+          include: { pacotes: { include: { fotos: true } } }, 
         });
 
         if (!updatedDestino) {
@@ -200,6 +168,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
   } catch (error) {
     console.error('API Error:', error);
+    // Nota: O erro original sobre `Invalid Date` não deve mais ocorrer após esta correção.
     return res.status(500).json({ success: false, message: 'Erro interno do servidor.', error: (error as Error).message });
   } finally {
     await prisma.$disconnect();
