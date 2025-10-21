@@ -93,7 +93,7 @@ const Footer = ({ menuData }: MenuProps) => {
                             </div>
                             <h4 className="font-bold text-white text-lg mt-6 mb-2">Siga-nos</h4>
                             <div className="flex space-x-4">
-                                <a href="https://wa.me//5591981149800?text=Gostaria de solicitar um orçamento. Estou entrando em contato através do site." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-2xl hover:text-green-500 transition-colors">
+                                <a href="https://wa.me//5591983169340?text=Gostaria de mais informações sobre o aluguel de vestidos." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="text-2xl hover:text-green-500 transition-colors">
                                     <FaWhatsapp className="text-black/70" />
                                 </a>
                                 <a href="https://www.instagram.com/dhages_turismo" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-2xl hover:text-pink-500 transition-colors">

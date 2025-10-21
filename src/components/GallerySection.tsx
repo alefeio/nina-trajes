@@ -280,24 +280,27 @@ export function GallerySection({ destino, onOpenModal, buttonHref }: GallerySect
 
                                             <div className="flex justify-between items-center gap-2">
 
-                                                <button
+                                                <a
+                                                    href={`https://wa.me/5591983169340?text=Olá! Gostaria de mais informações sobre o vestido ${pacote.title}. Link: ${encodeURIComponent(shareUrl)}`}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="flex-1 inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white rounded-full shadow-md py-3 font-bold transition-colors duration-300"
+                                                    aria-label="Reservar via WhatsApp"
                                                     onClick={(e) => {
                                                         e.stopPropagation();
                                                         handleWhatsappClick(pacote.id);
                                                     }}
-                                                    className="inline-flex items-center justify-center bg-green-600 hover:bg-pink-700 text-white rounded-full shadow-md p-3 transition-colors duration-300"
-                                                    aria-label="Compartilhar"
-                                                    disabled={isSharing}
                                                 >
-                                                    <FaWhatsapp className="w-5 h-5 text-white" />
-                                                </button>
+                                                    <FaWhatsapp className="mr-2 text-white" />
+                                                    Reservar
+                                                </a>
                                                 {canShare && (
                                                     <button
                                                         onClick={(e) => {
                                                             e.stopPropagation();
                                                             handleShare(pacote, shareUrl);
                                                         }}
-                                                        className="inline-flex items-center justify-center bg-pink-600 hover:bg-pink-700 text-white rounded-full shadow-md p-3 transition-colors duration-300"
+                                                        className="inline-flex items-center justify-center bg-blue-600 hover:bg-pink-700 text-white rounded-full shadow-md p-3 transition-colors duration-300"
                                                         aria-label="Compartilhar"
                                                         disabled={isSharing}
                                                     >

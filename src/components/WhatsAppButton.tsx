@@ -11,7 +11,7 @@ export default function WhatsAppButton() {
     return (
         <div className="fixed flex justify-between gap-2 bottom-4 right-4 z-30">
             <a
-                href="https://www.instagram.com/dhages_turismo"
+                href="https://www.instagram.com/ninatrajes"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="z-10 bg-pink-600 text-neutral-50 hover:bg-pink-700 text-white rounded-full shadow-lg p-3 font-bold text-lg transition"
@@ -20,7 +20,7 @@ export default function WhatsAppButton() {
                 <FaInstagram className="w-7 h-7 text-white" />
             </a>
             <a
-                href="https://wa.me//5591981149800?text=Gostaria de solicitar um orçamento. Estou entrando em contato através do site."
+                href="https://wa.me//5591983169340?text=Gostaria de mais informações sobre o aluguel de vestidos."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-600 text-neutral-50 hover:bg-green-700 text-white rounded-full shadow-lg p-3 font-bold text-lg transition"

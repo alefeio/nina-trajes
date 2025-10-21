@@ -199,7 +199,7 @@ export default function ModalPhotos({ pacote, onClose, shareUrl }: ModalPhotosPr
 
                                 {/* Botões de Ação ao lado do Curtir */}
                                 <a
-                                    href={`https://wa.me/5591981149800?text=Olá! Gostaria de mais informações sobre o pacote: ${pacote.title}. Link: ${encodeURIComponent(shareUrl)}`}
+                                    href={`https://wa.me/5591983169340?text=Olá! Gostaria de mais informações sobre o vestido: ${pacote.title}. Link: ${encodeURIComponent(shareUrl)}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="p-2 text-green-600 hover:text-green-800 transition-colors"
@@ -228,7 +228,7 @@ export default function ModalPhotos({ pacote, onClose, shareUrl }: ModalPhotosPr
                     {/* Botões - Fixos no final */}
                     <div className="bg-white/90 backdrop-blur-sm p-2 md:p-6 border-t border-neutral-200 flex flex-row gap-2 flex-shrink-0">
                         <a
-                            href={`https://wa.me/5591981149800?text=Olá! Gostaria de mais informações sobre o pacote: ${pacote.title}. Link: ${encodeURIComponent(shareUrl)}`}
+                            href={`https://wa.me/5591983169340?text=Olá! Gostaria de mais informações sobre o vestido: ${pacote.title}. Link: ${encodeURIComponent(shareUrl)}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex-1 text-center bg-green-600 hover:bg-green-700 text-white text-xs md:text-base font-bold py-3 px-6 rounded-full transition-colors flex items-center justify-center gap-2"
