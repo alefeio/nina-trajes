@@ -2,10 +2,10 @@ import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { FaTimes, FaWhatsapp, FaShareAlt, FaHeart, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Pacote } from "../types";
-import { format } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
+// REMOVIDO: import { format } from 'date-fns';
+// REMOVIDO: import { ptBR } from 'date-fns/locale';
 import { richTextToHtml } from '../utils/richTextToHtml';
-import { PacoteDate } from "./PacoteDate";
+// REMOVIDO: import { PacoteDate } from "./PacoteDate"; // Componente PacoteDate removido
 
 interface ModalPhotosProps {
     pacote: Pacote;
@@ -109,13 +109,19 @@ export default function ModalPhotos({ pacote, onClose, shareUrl }: ModalPhotosPr
     }
 
     const currentMedia = pacote.fotos[currentMediaIndex];
+    
+    // REMOVIDO: formatPrice não é mais necessário
+    /*
     const formatPrice = (priceInCents: number) => {
         const priceInReals = priceInCents / 100;
         return priceInReals.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     };
+    */
 
     const isCurrentMediaImage = isImage(currentMedia.url);
 
+    // REMOVIDO: Toda a lógica de availableDates foi removida
+    /*
     const availableDates = pacote.dates
         ?.filter(date => new Date(date.saida) >= new Date())
         .sort((a, b) => new Date(a.saida).getTime() - new Date(b.saida).getTime())
@@ -124,6 +130,7 @@ export default function ModalPhotos({ pacote, onClose, shareUrl }: ModalPhotosPr
             saida: new Date(date.saida),
             retorno: date.retorno ? new Date(date.retorno) : undefined
         }));
+    */
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 animate-fade-in" onClick={onClose}>
@@ -216,6 +223,9 @@ export default function ModalPhotos({ pacote, onClose, shareUrl }: ModalPhotosPr
                                 <h3 className="text-lg font-semibold text-primary-800 mb-2 uppercase">Detalhes do Pacote:</h3>
                                 <div className="prose prose-sm max-w-none text-neutral-700" dangerouslySetInnerHTML={{ __html: richTextToHtml(pacote.description) }} />
                             </div>
+
+                            {/* REMOVIDO: Toda a seção de datas e preços estaria aqui */}
+                            {/* O componente PacoteDate também foi removido */}
 
                             <div className="mt-6 border-t border-neutral-200 pt-4">
                                 <h3 className="text-lg font-semibold text-primary-800 mb-2">NOSSO PACOTE INCLUI:</h3>

@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { FaWhatsapp, FaShareAlt, FaHeart, FaPlayCircle } from "react-icons/fa";
+// Removido: import { format } from 'date-fns';
+// Removido: import { ptBR } from 'date-fns/locale';
 import { Destino, Pacote } from "../types";
 import Image from "next/image";
-import { format } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
 
 type GallerySectionProps = {
     destino: Destino;
@@ -23,6 +23,7 @@ export function GallerySection({ destino, onOpenModal, buttonHref }: GallerySect
     const [originUrl, setOriginUrl] = useState('');
     const [pacoteStats, setPacoteStats] = useState<{ [key: string]: { like: number | null; view: number | null } }>({});
 
+    // Removido: formatPrice não é mais necessário sem o price_card e price
     const formatPrice = useCallback((priceInCents: number) => {
         return new Intl.NumberFormat('pt-BR', {
             style: 'currency',
@@ -31,7 +32,7 @@ export function GallerySection({ destino, onOpenModal, buttonHref }: GallerySect
         }).format(priceInCents / 100);
     }, []);
 
-    // **NOVA FUNÇÃO: Lida com a visualização do pacote e atualiza o estado**
+    // **FUNÇÃO: Lida com a visualização do pacote e atualiza o estado**
     const handleView = useCallback(async (pacoteId: string) => {
         try {
             const response = await fetch('/api/stats/item-view', {
@@ -60,7 +61,7 @@ export function GallerySection({ destino, onOpenModal, buttonHref }: GallerySect
         }
     }, []);
 
-    // **NOVA FUNÇÃO: Lida com o clique no item da galeria**
+    // **FUNÇÃO: Lida com o clique no item da galeria**
     const handleItemClick = useCallback((pacoteId: string) => {
         handleView(pacoteId); // Primeiro, chama a função para registrar a visualização
         onOpenModal(pacoteId); // Em seguida, chama a função para abrir o modal
@@ -120,7 +121,7 @@ export function GallerySection({ destino, onOpenModal, buttonHref }: GallerySect
         try {
             await navigator.share({
                 title: `Pacote: ${pacote.title}`,
-                text: `${pacote.subtitle ? pacote.subtitle + ' - ' : ''}Confira este pacote de viagem incrível!`,
+                text: `${pacote.subtitle ? pacote.subtitle + ' - ' : ''}Confira este pacote incrível!`,
                 url: shareUrl,
             });
             await handleShareClick(pacote.id);
@@ -151,9 +152,8 @@ export function GallerySection({ destino, onOpenModal, buttonHref }: GallerySect
 
     const backgroundImage = destino.image || '/placeholder.jpg';
 
-    const pacotesComDatasFuturas = destino.pacotes.filter(pacote =>
-        pacote.dates?.some(date => new Date(date.saida) >= new Date())
-    );
+    // Removido: pacotesComDatasFuturas e sua lógica de filtragem
+    const pacotesDisponiveis = destino.pacotes; 
 
     return (
         <article className="py-8 bg-">
@@ -198,7 +198,8 @@ export function GallerySection({ destino, onOpenModal, buttonHref }: GallerySect
 
             <div className="max-w-7xl mx-auto px-2 md:px-4 py-12">
                 <div className="grid grid-cols-2 gap-2 md:gap-8">
-                    {pacotesComDatasFuturas.map(pacote => {
+                    {/* Alterado de pacotesComDatasFuturas para pacotesDisponiveis */}
+                    {pacotesDisponiveis.map(pacote => { 
                         const shareUrl = `${originUrl}/pacotes/${destino.slug}/${pacote.slug}`;
                         const firstMedia = pacote.fotos[0] || { url: '/placeholder.jpg' };
                         const isFirstMediaVideo = isVideo(firstMedia.url);
@@ -206,18 +207,16 @@ export function GallerySection({ destino, onOpenModal, buttonHref }: GallerySect
                         const currentLikes = pacoteStats[pacote.id]?.like ?? pacote.like ?? 0;
                         const currentViews = pacoteStats[pacote.id]?.view ?? pacote.view ?? 0;
 
-                        const availableDates = pacote.dates
-                            ?.filter(date => new Date(date.saida) >= new Date())
-                            .sort((a, b) => new Date(a.saida).getTime() - new Date(b.saida).getTime());
-
-                        const hasDates = availableDates && availableDates.length > 0;
-                        const firstDate = hasDates ? availableDates[0] : null;
+                        // Removido: lógica de availableDates, hasDates, firstDate e formatPrice
+                        // const availableDates = pacote.dates?.filter(date => new Date(date.saida) >= new Date()).sort((a, b) => new Date(a.saida).getTime() - new Date(b.saida).getTime());
+                        // const hasDates = availableDates && availableDates.length > 0;
+                        // const firstDate = hasDates ? availableDates[0] : null;
 
                         return (
                             <div
                                 key={pacote.id}
                                 className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 overflow-hidden flex flex-col cursor-pointer"
-                                onClick={() => handleItemClick(pacote.id)} // Alterado para chamar a nova função
+                                onClick={() => handleItemClick(pacote.id)} 
                             >
                                 <div className="flex flex-col sm:flex-row h-full">
                                     <div className="relative w-full h-72 sm:w-1/2 sm:h-auto">
@@ -281,21 +280,7 @@ export function GallerySection({ destino, onOpenModal, buttonHref }: GallerySect
                                         )}
 
                                         <div className="mt-auto pt-4 border-t border-neutral-200">
-                                            {/* {firstDate && (
-                                                <div className="flex justify-between items-end mb-4">
-                                                    <div>
-                                                        <p className="text-2xl font-bold text-primary-800">
-                                                            {formatPrice(firstDate.price)}
-                                                        </p>
-                                                        <p className="text-sm text-neutral-500">
-                                                            à vista no Pix
-                                                        </p>
-                                                        <p className="text-sm text-neutral-500">
-                                                            ou {formatPrice(firstDate.price_card)} no cartão
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            )} */}
+                                            {/* Removido: Bloco de código JSX para exibição de preço e datas */}
 
                                             <div className="flex justify-between items-center gap-2">
                                                 <a

@@ -63,7 +63,7 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
         };
 
         registerView();
-    }, [pacote.id]); // O array vazio [] garante que o efeito só rode uma vez.
+    }, [pacote.id]); // O array de dependências garante que o efeito só rode uma vez para o pacote atual.
     // --- FIM DO CÓDIGO ADICIONADO ---
 
 
@@ -207,32 +207,14 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
         handleWhatsAppClick();
     }, [handleWhatsAppClick, pacote.title, shareUrl]);
 
-    const handlePreReservaClick = useCallback(async (dateSaida: string) => {
-        try {
-            await fetch('/api/stats/pacote-date-whatsapp', {
-                method: 'PATCH',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ pacoteId: pacote.id, dateSaida }),
-            });
-        } catch (error) {
-            console.error('Falha ao registrar clique de mais informações:', error);
-        }
-    }, [pacote.id]);
-
-    const availableDates = pacote.dates
-        ?.filter(date => new Date(date.saida) >= new Date())
-        .sort((a, b) => new Date(a.saida).getTime() - new Date(b.saida).getTime())
-        .map(date => ({
-            ...date,
-            saida: new Date(date.saida),
-            retorno: date.retorno ? new Date(date.retorno) : undefined
-        }));
+    // Lógica relacionada a datas de pacote (PacoteDate) removida.
+    // A função handlePreReservaClick também foi removida.
 
     const metaDescription = pacote.subtitle
         ? pacote.subtitle
-        : `Descubra o pacote de viagem ${pacote.title} com a Romaria Fluvial Muiraquitã. Confira datas, preços e detalhes para sua próxima aventura.`;
+        : `Descubra o pacote de viagem ${pacote.title} com a Romaria Fluvial Muiraquitã. Confira detalhes para sua próxima aventura.`;
 
-    const keywords = `${pacote.title}, ${pacote.subtitle || ''}, Romaria Fluvial Muiraquitã, viagens, pacotes turísticos, ${pacote.destinoId.split('-')[0]}, ${pacote.slug}, ${availableDates?.[0]?.saida ? format(availableDates[0].saida, 'yyyy', { locale: ptBR }) : ''}`
+    const keywords = `${pacote.title}, ${pacote.subtitle || ''}, Romaria Fluvial Muiraquitã, viagens, pacotes turísticos, ${pacote.destinoId.split('-')[0]}, ${pacote.slug}`
         .split(',')
         .map(keyword => keyword.trim())
         .filter(keyword => keyword.length > 0)
@@ -280,29 +262,29 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
                 <script type="application/ld+json">
                     {`
                                                 {
-                                                        "@context": "https://schema.org",
-                                                        "@type": "Product",
-                                                        "name": "${pacote.title}",
-                                                        "description": "${metaDescription}",
-                                                        "image": "${currentMedia ? currentMedia.url : 'https://seusite.com/images/default-pacote.jpg'}",
-                                                        "url": "${shareUrl}",
-                                                        "brand": {
-                                                                "@type": "Brand",
-                                                                "name": "Romaria Fluvial Muiraquitã"
-                                                        },
-                                                        "offers": {
-                                                                "@type": "Offer",
-                                                                "priceCurrency": "BRL",
-                                                                "price": "${availableDates && availableDates.length > 0 ? (availableDates[0].price / 100).toFixed(2) : '0.00'}",
-                                                                "itemCondition": "https://schema.org/NewCondition",
-                                                                "availability": "${availableDates && availableDates.length > 0 ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock'}",
-                                                                "seller": {
-                                                                        "@type": "TravelAgency",
-                                                                        "name": "Romaria Fluvial Muiraquitã"
-                                                                }
-                                                        }
+                                                    "@context": "https://schema.org",
+                                                    "@type": "Product",
+                                                    "name": "${pacote.title}",
+                                                    "description": "${metaDescription}",
+                                                    "image": "${currentMedia ? currentMedia.url : 'https://seusite.com/images/default-pacote.jpg'}",
+                                                    "url": "${shareUrl}",
+                                                    "brand": {
+                                                            "@type": "Brand",
+                                                            "name": "Romaria Fluvial Muiraquitã"
+                                                    },
+                                                    "offers": {
+                                                            "@type": "Offer",
+                                                            "priceCurrency": "BRL",
+                                                            "price": "0.00",
+                                                            "itemCondition": "https://schema.org/NewCondition",
+                                                            "availability": "https://schema.org/OutOfStock",
+                                                            "seller": {
+                                                                    "@type": "TravelAgency",
+                                                                    "name": "Romaria Fluvial Muiraquitã"
+                                                            }
+                                                    }
                                                 }
-                                        `}
+                                            `}
                 </script>
                 <script>
                     {`
@@ -501,11 +483,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         },
         include: {
             fotos: true,
-            dates: {
-                orderBy: {
-                    saida: 'asc',
-                },
-            },
+            // O relacionamento 'dates' (PacoteDate) foi removido da inclusão
         },
     });
 
@@ -517,13 +495,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         ...pacote,
         createdAt: pacote.createdAt?.toISOString() || null,
         updatedAt: pacote.updatedAt?.toISOString() || null,
-        dates: pacote.dates.map(date => ({
-            ...date,
-            createdAt: date.createdAt.toISOString(),
-            updatedAt: date.updatedAt.toISOString(),
-            saida: date.saida.toISOString(),
-            retorno: date.retorno?.toISOString() || null,
-        })),
+        // A serialização de 'dates' (PacoteDate) foi removida
         fotos: pacote.fotos.map(foto => ({
             ...foto,
             createdAt: foto.createdAt.toISOString(),
