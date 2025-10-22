@@ -424,9 +424,9 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
                             <div className="text-sm text-neutral-700 space-y-1">
                                 <p><strong>D’ HAGES TURISMO</strong></p>
                                 <p>Trav. Mauriti, 479 (entre Rua Nova e Senador Lemos) - Belém – Pará – Brasil - CEP: 66083-000</p>
-                                <p>E-mail: <a href="mailto:dhagesturismo@gmail.com" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:underline">dhagesturismo@gmail.com</a></p>
-                                <p><a href="https://www.facebook.com/dhagesturismo" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:underline">Facebook.com/dhagesturismo</a></p>
-                                <p>Instagram: <a href="https://www.instagram.com/dhages_turismo" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:underline">@dhages_turismo</a></p>
+                                <p>E-mail: <a href="mailto:ninatrajes@gmail.com" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:underline">ninatrajes@gmail.com</a></p>
+                                <p><a href="https://www.facebook.com/ninatrajes" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:underline">Facebook.com/ninatrajes</a></p>
+                                <p>Instagram: <a href="https://www.instagram.com/ninatrajes" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:underline">@ninatrajes</a></p>
                                 <p>Fones/WhatsApp: <a href="https://wa.me/559133485063" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:underline">91 3348-5063</a> / <a href="https://wa.me/5591981149800" target="_blank" rel="noopener noreferrer" className="text-pink-600 hover:underline">91 98114-9800</a></p>
                             </div>
                         </div>

@@ -15,7 +15,7 @@ export const authOptions: NextAuthOptions = {
             from: process.env.EMAIL_FROM,
             async sendVerificationRequest({ identifier: email, url, provider: { from } }) {
                 await resend.emails.send({
-                    from: from || "contato@dhagesturismo.com.br",
+                    from: from || "contato@ninatrajes.com.br",
                     to: email,
                     subject: "Link de login para o Nina Trajes",
                     html: `Clique neste link para entrar: <a href="${url}">${url}</a>`,
