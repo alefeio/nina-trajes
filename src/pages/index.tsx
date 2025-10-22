@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
-import Script from 'next/script';
+// REMOVIDO: import Script from 'next/script';
 import HeroSlider from '../components/HeroSlider';
 import WhatsAppButton from '../components/WhatsAppButton';
 import PacotesGallery from '../components/PacotesGallery';
@@ -12,7 +12,7 @@ import LocationMap from '../components/LocationMap';
 import Header from 'components/Header';
 import { Menu as MenuComponent } from 'components/Menu';
 import Hero from 'components/Hero';
-import { Analytics } from "@vercel/analytics/next";
+// REMOVIDO: import { Analytics } from "@vercel/analytics/next";
 import { HomePageProps, Destino } from '../types/index';
 // Importe a interface de galeria do arquivo correto
 import { Gallery } from '../types/gallery';
@@ -132,6 +132,19 @@ export default function Home({ banners, menu, testimonials, faqs, destinos, gall
     return (
         <>
             <Head>
+                {/* NOVO: Google tag (gtag.js) - Google Analytics 4 */}
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-KZZM7B8NY1"></script>
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+                            gtag('config', 'G-KZZM7B8NY1');
+                        `,
+                    }}
+                />
+
                 {/* 1. TITLE OTIMIZADO */}
                 <title>Nina Trajes: Aluguel de Vestidos Delivery em Belém e Barcarena | Experimente em Casa</title>
                 
@@ -182,9 +195,9 @@ export default function Home({ banners, menu, testimonials, faqs, destinos, gall
                       "@context": "https://schema.org",
                       "@type": "LocalBusiness",
                       "name": "Nina Trajes - Aluguel de Vestidos Delivery",
-                      "url": "https://seusite.com/",
-                      "logo": "https://seusite.com/images/logo-nina-trajes.png",
-                      "description": "Loja de aluguel de vestidos de festa, formatura e casamento com atendimento delivery em Belém e Barcarena. Experimente em casa!",
+                      "url": "https://ninatrajes.com.br/",
+                      "logo": "https://res.cloudinary.com/dibplswe5/image/upload/v1760727246/dresses/c06n8g5tnxuqswqtm82a.png",
+                      "description": "Loja de aluguel de vestidos de festa e formatura com atendimento delivery em Belém e Barcarena. Experimente em casa!",
                       "areaServed": [
                         { "@type": "City", "name": "Belém" },
                         { "@type": "City", "name": "Barcarena" }
@@ -196,20 +209,19 @@ export default function Home({ banners, menu, testimonials, faqs, destinos, gall
                       },
                       "address": {
                         "@type": "PostalAddress",
-                        "streetAddress": "Av. Senador Lemos, 3153, lojas 30/31 - 1º piso, It Center - Sacramenta",
+                        "streetAddress": "R. dos Tamoios, 1235 - Batista Campos",
                         "addressLocality": "Belém",
                         "addressRegion": "PA",
-                        "postalCode": "66120-000",
+                        "postalCode": "66025-125",
                         "addressCountry": "BR"
                       },
                       "contactPoint": {
                         "@type": "ContactPoint",
-                        "telephone": "+559133485063",
-                        "contactType": "Vendas e Aluguel"
+                        "telephone": "+5591983169340",
+                        "contactType": "Aluguel"
                       },
                       "sameAs": [
-                        "https://facebook.com/nina.trajes", // Substitua pelos links reais da Nina Trajes
-                        "https://www.instagram.com/nina.trajes" // Substitua pelos links reais da Nina Trajes
+                        "https://www.instagram.com/ninatrajes"
                       ]
                     }
                     `}
@@ -217,7 +229,7 @@ export default function Home({ banners, menu, testimonials, faqs, destinos, gall
             </Head>
 
             <div className="min-h-screen">
-                <Analytics />
+                {/* REMOVIDO: <Analytics /> */}
                 <MenuComponent menuData={menu} />
                 <HeroSlider banners={banners} />
                 <main className="max-w-full mx-auto">
