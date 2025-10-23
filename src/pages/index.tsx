@@ -124,7 +124,7 @@ export default function Home({ banners, menu, testimonials, faqs, destinos, gall
     // **ATUALIZADO:** Referência de imagem genérica para OG/Twitter.
     const defaultOgImage = banners.length > 0 && banners[0].banners[0].url
         ? banners[0].banners[0].url
-        : 'https://seusite.com/default-og-image-vestidos.jpg'; // Sugestão de alteração
+        : 'https://res.cloudinary.com/dibplswe5/image/upload/v1761082142/dresses/tlljoqsjare2zxii5otp.jpg'; // Sugestão de alteração
 
     // **ATUALIZADO:** Descrição alternativa para a imagem.
     const defaultOgImageAlt = "Nina Trajes - Aluguel de Vestidos de Festa em Belém e Barcarena";
@@ -160,7 +160,7 @@ export default function Home({ banners, menu, testimonials, faqs, destinos, gall
                     content="aluguel de vestidos, vestidos de festa, vestidos para formatura, vestidos para casamento, aluguel de trajes Belém, aluguel de vestidos Barcarena, vestidos delivery Belém, experimentar vestido em casa, Nina Trajes"
                 />
                 
-                <link rel="canonical" href="https://seusite.com/" />
+                <link rel="canonical" href="https://ninatrajes.com.br/" />
                 <meta name="robots" content="index, follow" />
                 <meta property="og:locale" content="pt_BR" />
                 <meta property="og:site_name" content="Nina Trajes" />
@@ -171,7 +171,7 @@ export default function Home({ banners, menu, testimonials, faqs, destinos, gall
                     property="og:description"
                     content="Na Nina Trajes, alugue vestidos de festa com praticidade e estilo! Levamos modelos para você experimentar em casa (Belém). Atendemos também Barcarena."
                 />
-                <meta property="og:url" content="https://seusite.com/" />
+                <meta property="og:url" content="https://ninatrajes.com.br/" />
                 <meta property="og:type" content="website" />
                 <meta property="og:image" content={defaultOgImage} />
                 <meta property="og:image:width" content="1200" />
