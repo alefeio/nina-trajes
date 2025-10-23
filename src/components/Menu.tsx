@@ -77,27 +77,30 @@ export function Menu({ menuData }: MenuProps) {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${isScrolled
-          ? "bg-pink-100/95 backdrop-blur-sm py-3 shadow-lg"
-          : "py-4"
+        ? "bg-pink-900/95 backdrop-blur-sm py-3 shadow-lg"
+        : "py-4"
         }`}
     >
-      <div className="mx-auto flex items-center justify-between px-4 md:px-8">
+      <div className={`max-w-7xl mx-auto flex ${isScrolled ? "items-center" : "items-start"} justify-between px-4 md:px-8`}>
         <Link href="/">
           <img
             src={logoUrl || "/images/logo.png"}
             alt="Logomarca Curva Engenharia"
-            className={`transition-all duration-300 h-auto ${isScrolled ? "w-10 md:w-15" : "w-16 md:w-24"
+            className={`transition-all duration-300 h-auto ${isScrolled ? "w-10 md:w-15" : "w-20 md:w-28"
               }`}
           />
         </Link>
 
         {/* Navegação Desktop */}
-        <nav className="hidden md:flex gap-8 font-semibold items-center">
+        <nav className={`hidden md:flex gap-8 font-semibold items-center ${isScrolled ? "" : "bg-pink-900/90"} px-8 rounded-xl`}>
           {links.map(({ text, url, target }) => (
             <Link
               key={url}
               href={url}
-              className="relative text-pink-800 hover:text-pink-500 transition-colors duration-300 group"
+              className={`relative text-pink-200 hover:text-pink-800 transition-colors duration-300 group ${isScrolled
+                ? "text-pink-200"
+                : "py-4"
+                }`}
               onClick={() => setMenuOpen(false)}
               target={target}
             >
@@ -145,7 +148,7 @@ export function Menu({ menuData }: MenuProps) {
             <li key={url}>
               <Link
                 href={url}
-                className="block py-2 hover:text-pink-500 transition-colors border-b border-pink-700 last:border-b-0"
+                className="block py-2 text-pink-200 transition-colors border-b border-pink-700 last:border-b-0"
                 onClick={() => setMenuOpen(false)}
                 target={target}
               >
