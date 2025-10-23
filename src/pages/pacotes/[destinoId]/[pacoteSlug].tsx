@@ -2,22 +2,18 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { FaChevronLeft, FaChevronRight, FaWhatsapp, FaShareAlt, FaHeart, FaTimes, FaGlobe } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaWhatsapp, FaShareAlt, FaHeart, FaGlobe } from "react-icons/fa";
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { PrismaClient } from '@prisma/client';
-import { Destino, MenuItem, Pacote } from '../../../types';
+import { MenuItem, Pacote } from '../../../types';
 import { richTextToHtml } from '../../../utils/richTextToHtml';
-import { format } from 'date-fns'; // Mantido, mas não será usado para datas de pacote
-import { ptBR } from 'date-fns/locale';
 import Link from 'next/link';
 import { MenuInterno as MenuComponent } from 'components/MenuInterno';
 import Footer from 'components/Footer';
 
 const prisma = new PrismaClient();
 
-// **ATENÇÃO:** Para que este código funcione, você DEVE remover o campo 'dates' 
-// da sua interface Pacote no arquivo '../../../types'.
-// A interface Pacote precisa ter sido atualizada para refletir a nova estrutura de dados (sem dates).
+// Nota: A interface Pacote precisa ter sido atualizada para refletir a nova estrutura de dados (sem dates).
 // Ex: interface Pacote { id: string; slug: string; title: string; subtitle: string | null; ...; fotos: Foto[]; }
 
 interface PacotePageProps {
@@ -41,36 +37,27 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
     const [currentLikes, setCurrentLikes] = useState(pacote.like || 0);
 
     const whatsappNumber = "5591981149800";
-
-    // NOVO: Obtém a URL base da variável de ambiente
+    
+    // Obtém a URL base da variável de ambiente
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || '';
     const shareUrl = `${baseUrl}${router.asPath}`;
 
     // --- CÓDIGO PARA REGISTRAR A VISUALIZAÇÃO ---
     useEffect(() => {
-        // Esta função assíncrona registra a visualização na API
         const registerView = async () => {
             try {
-                console.log(`[PacotePage] Registrando visualização para o pacote: ${pacote.id}`);
-                const response = await fetch('/api/stats/item-view', {
+                await fetch('/api/stats/item-view', {
                     method: 'PATCH',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ pacoteId: pacote.id }),
                 });
-                if (!response.ok) {
-                    const errorText = await response.text();
-                    console.error('Falha ao registrar visualização:', response.status, errorText);
-                } else {
-                    const data = await response.json();
-                    console.log('Visualização registrada com sucesso!', data);
-                }
             } catch (error) {
                 console.error('Erro ao chamar a API de visualização:', error);
             }
         };
 
         registerView();
-    }, [pacote.id]);
+    }, [pacote.id]); 
     // --- FIM DO CÓDIGO ADICIONADO ---
 
 
@@ -81,10 +68,6 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
             </div>
         );
     }
-
-    // Função de formatação de preço removida, pois não há preço fixo
-    // sem as datas de saída. Você deve adicionar um preço base ao model Pacote
-    // ou informar ao usuário para entrar em contato.
 
     const currentMedia = pacote.fotos[0];
 
@@ -137,12 +120,11 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
     }, []);
 
     const handleLike = useCallback(async () => {
-        // Lógica para evitar curtidas repetidas no cliente
         const liked = localStorage.getItem(`pacote-${pacote.id}-liked`);
         if (liked) return;
 
         setCurrentLikes(prev => prev + 1);
-
+        
         try {
             const response = await fetch('/api/stats/pacote-like', {
                 method: 'PATCH',
@@ -150,8 +132,6 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
                 body: JSON.stringify({ pacoteId: pacote.id }),
             });
             if (!response.ok) {
-                const errorText = await response.text();
-                console.error('Erro na API de curtida:', response.status, errorText);
                 setCurrentLikes(prev => prev - 1); // Reverte o estado
                 return;
             }
@@ -159,7 +139,6 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
             if (data.success) {
                 localStorage.setItem(`pacote-${pacote.id}-liked`, 'true');
             } else {
-                console.error('Resposta da API sem sucesso:', data);
                 setCurrentLikes(prev => prev - 1); // Reverte o estado
             }
         } catch (error) {
@@ -198,7 +177,7 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
                 await navigator.share({
                     title: pacote.title,
                     text: pacote.subtitle || "Confira este incrível pacote de viagem!",
-                    url: shareUrl,
+                    url: shareUrl, 
                 });
                 await handleSharedClick();
             } catch (error) {
@@ -216,8 +195,6 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
         window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
         handleWhatsAppClick();
     }, [handleWhatsAppClick, pacote.title, shareUrl, whatsappNumber]);
-
-    // Lógica e função handlePreReservaClick removidas, pois não há mais 'dates'
 
     const metaDescription = pacote.subtitle
         ? pacote.subtitle
@@ -283,9 +260,9 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
                         "offers": {
                             "@type": "Offer",
                             "priceCurrency": "BRL",
-                            "price": "0.00", // Preço zerado ou removido já que não há mais datas/preços específicos
+                            "price": "0.00", 
                             "itemCondition": "https://schema.org/NewCondition",
-                            "availability": "https://schema.org/Inquire", // Mudado para 'Inquire' (Consultar)
+                            "availability": "https://schema.org/Inquire" , 
                             "seller": {
                                 "@type": "TravelAgency",
                                 "name": "Romaria Fluvial Muiraquitã"
@@ -472,7 +449,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
     const paths = pacotes.map(pacote => ({
         params: {
-            destinoId: `norte-${pacote.destino.id}`,
+            // Mantém a estrutura de URL com o prefixo 'norte-'
+            destinoId: `norte-${pacote.destino.id}`, 
             pacoteSlug: pacote.slug
         },
     }));
@@ -492,15 +470,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
     const menu: any | null = menus.length > 0 ? menus[0] : null;
 
-    // Serializa o menu se existir
+    // 1. Serializa o menu de forma segura para evitar erro de .toISOString()
     const serializedMenu = menu ? {
         ...menu,
         createdAt: menu.createdAt?.toISOString() || null,
         updatedAt: menu.updatedAt?.toISOString() || null,
     } : null;
+    
+    // 2. Extrai o ID real do destino (e.g., "norte-ID" -> "ID")
+    const destinoIdReal = destinoId.split('-')[1]; 
 
-    const destinoIdReal = destinoId.split('-')[1];
-
+    // 3. Busca o pacote no Prisma
     const pacote = await prisma.pacote.findUnique({
         where: {
             slug: pacoteSlug,
@@ -510,7 +490,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         },
         include: {
             fotos: true,
-            // Campo 'dates' removido da inclusão
+            // Campo 'dates' REMOVIDO
         },
     });
 
@@ -518,16 +498,20 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         return { notFound: true };
     }
 
-    // Serializa o objeto Pacote, removendo a necessidade de 'dates'
+    // 4. Serializa o objeto Pacote (Removendo 'dates' e tratando datas)
     const serializedPacote = {
         ...pacote,
+        // Serialização segura das datas do Pacote
         createdAt: pacote.createdAt?.toISOString() || null,
         updatedAt: pacote.updatedAt?.toISOString() || null,
-
+        
+        // Campo 'dates' REMOVIDO
+        
+        // Serialização das fotos
         fotos: pacote.fotos.map(foto => ({
             ...foto,
-            createdAt: foto.createdAt.toISOString(), // Assumindo que datas de fotos são obrigatórias
-            updatedAt: foto.updatedAt.toISOString(), // Assumindo que datas de fotos são obrigatórias
+            createdAt: foto.createdAt.toISOString(),
+            updatedAt: foto.updatedAt.toISOString(),
         })),
     };
 
