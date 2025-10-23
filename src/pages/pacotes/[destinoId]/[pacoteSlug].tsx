@@ -41,7 +41,7 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
     const [currentLikes, setCurrentLikes] = useState(pacote.like || 0);
 
     const whatsappNumber = "5591981149800";
-    
+
     // NOVO: Obtém a URL base da variável de ambiente
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || '';
     const shareUrl = `${baseUrl}${router.asPath}`;
@@ -70,7 +70,7 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
         };
 
         registerView();
-    }, [pacote.id]); 
+    }, [pacote.id]);
     // --- FIM DO CÓDIGO ADICIONADO ---
 
 
@@ -142,7 +142,7 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
         if (liked) return;
 
         setCurrentLikes(prev => prev + 1);
-        
+
         try {
             const response = await fetch('/api/stats/pacote-like', {
                 method: 'PATCH',
@@ -198,7 +198,7 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
                 await navigator.share({
                     title: pacote.title,
                     text: pacote.subtitle || "Confira este incrível pacote de viagem!",
-                    url: shareUrl, 
+                    url: shareUrl,
                 });
                 await handleSharedClick();
             } catch (error) {
@@ -285,7 +285,7 @@ export default function PacotePage({ pacote, menu }: PacotePageProps) {
                             "priceCurrency": "BRL",
                             "price": "0.00", // Preço zerado ou removido já que não há mais datas/preços específicos
                             "itemCondition": "https://schema.org/NewCondition",
-                            "availability": "https://schema.org/Inquire" , // Mudado para 'Inquire' (Consultar)
+                            "availability": "https://schema.org/Inquire", // Mudado para 'Inquire' (Consultar)
                             "seller": {
                                 "@type": "TravelAgency",
                                 "name": "Romaria Fluvial Muiraquitã"
@@ -495,8 +495,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     // Serializa o menu se existir
     const serializedMenu = menu ? {
         ...menu,
-        createdAt: menu.createdAt.toISOString(),
-        updatedAt: menu.updatedAt.toISOString(),
+        createdAt: menu.createdAt?.toISOString() || null,
+        updatedAt: menu.updatedAt?.toISOString() || null,
     } : null;
 
     const destinoIdReal = destinoId.split('-')[1];
@@ -521,14 +521,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     // Serializa o objeto Pacote, removendo a necessidade de 'dates'
     const serializedPacote = {
         ...pacote,
-        // Garante a serialização de datas do próprio pacote (assumindo que existam)
         createdAt: pacote.createdAt?.toISOString() || null,
         updatedAt: pacote.updatedAt?.toISOString() || null,
-        // Removido: dates: pacote.dates.map(...)
+
         fotos: pacote.fotos.map(foto => ({
             ...foto,
-            createdAt: foto.createdAt.toISOString(),
-            updatedAt: foto.updatedAt.toISOString(),
+            createdAt: foto.createdAt.toISOString(), // Assumindo que datas de fotos são obrigatórias
+            updatedAt: foto.updatedAt.toISOString(), // Assumindo que datas de fotos são obrigatórias
         })),
     };
 
