@@ -201,7 +201,7 @@ export function GallerySection({ destino, onOpenModal, buttonHref }: GallerySect
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8">
                     {/* Alterado de pacotesComDatasFuturas para pacotesDisponiveis */}
                     {pacotesDisponiveis.map(pacote => {
-                        const shareUrl = `${originUrl}/pacotes/${destino.slug}/${pacote.slug}`;
+                        const shareUrl = `${originUrl}/vestidos/${destino.slug}/${pacote.slug}`;
                         const firstMedia = pacote.fotos[0] || { url: '/placeholder.jpg' };
                         const isFirstMediaVideo = isVideo(firstMedia.url);
                         // Usa o estado local para as visualizações, com fallback para o valor inicial

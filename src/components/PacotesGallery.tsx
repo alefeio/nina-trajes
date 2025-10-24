@@ -27,7 +27,7 @@ export default function PacotesGallery({ destinos }: PacotesGalleryProps) {
             router.push({
                 pathname: router.pathname,
                 query: { destinoSlug: destino.slug, pacoteId: pacote.id }
-            }, `/pacotes/${destino.slug}/${pacote.slug}`, { shallow: true, scroll: false });
+            }, `/vestidos/${destino.slug}/${pacote.slug}`, { shallow: true, scroll: false });
         } else {
             console.error("Erro: destino ou pacote não encontrado.");
         }
@@ -50,7 +50,7 @@ export default function PacotesGallery({ destinos }: PacotesGalleryProps) {
                     setPacoteExibido(pacote);
                     setShowModal(true);
                     // Criando o URL com o formato amigável
-                    const newShareUrl = `${window.location.origin}/pacotes/${destino.slug}/${pacote.slug}`;
+                    const newShareUrl = `${window.location.origin}/vestidos/${destino.slug}/${pacote.slug}`;
                     setShareUrl(newShareUrl);
                 } else if (showModal) {
                     closeModal();
