@@ -83,7 +83,7 @@ const Footer = ({ menuData }: MenuProps) => {
                             <h4 className="font-bold text-white text-lg mb-4">Contato</h4>
                             <div className="space-y-2">
                                 <p>
-                                    <a href="tel:+5591981149800" className="hover:text-pink-500 transition-colors text-black/70">
+                                    <a href="tel:+5591983169340" className="hover:text-pink-500 transition-colors text-black/70">
                                         +55 (91) 98316-9340
                                     </a>
                                 </p>
